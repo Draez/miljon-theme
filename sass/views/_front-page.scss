@@ -1,0 +1,27 @@
+// ------------------------------------------------
+// Front page
+//
+.entry-header {
+    background-color: #1D242C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 70vh;
+    max-width: $layout-max-width;
+    margin: 0 auto;
+  
+    // Internet Explorer needs this
+    height: 70vh;
+  
+    h1 {
+      @include responsive-font(2.4vw, 22px, 46px);
+      color: #FFF;
+      max-width: 800px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+  }
