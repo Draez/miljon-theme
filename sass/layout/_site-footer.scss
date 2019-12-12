@@ -12,37 +12,52 @@
 
 .site-footer {
   padding: 20px;
-  background: #eaeaea;
+  background: $color-darkgrey;
   color: #fff;
   overflow: hidden;
-  clear: both;
 
-  svg {
-    fill: #555;
-    top: 2px;
-    position: relative;
-  }
+  .wrapper {
+    @include grid(4);
 
-  p,
-  span {
-    color: #555;
-  }
-
-  a {
-    color: #555;
-
-    &:hover {
-      color: $color-links;
+    @media (max-width: $container-ipad) {
+      @include grid(2);
+    
+      .col {
+        margin: 40px 0;
+      }
     }
-  }
-}
 
-.theme-info {
-  overflow: hidden;
+    @media (max-width: $container-mobile) {
+      display: block;
+    }
 
-  @media (min-width: $container-ipad) {
-    width: 60%;
-    text-align: right;
-    float: right;
+    .col {
+      h4 {
+        opacity: .5;
+        color: #FFF;
+      }
+
+      p {
+        line-height: 32px;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        padding: 0;
+        line-height: 36px;
+      }
+
+      a {
+        color: #FFF;
+        text-decoration: none;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
   }
 }

@@ -74,6 +74,10 @@ tr,
   line-height: $line-height;
 }
 
+.lead {
+  @include responsive-font($lead-min-size, $lead-max-size);
+}
+
 p {
   margin-top: 2.9rem;
   margin-bottom: 2.9rem;
@@ -136,9 +140,9 @@ $h6_max: null;
   $h1_min: 32px;
   $h1_max: 51px;
   $h2_min: 24px;
-  $h2_max: 38px;
+  $h2_max: 32px;
   $h3_min: 21px;
-  $h3_max: 28px;
+  $h3_max: 24px;
   $h4_min: 18px;
   $h4_max: 21px;
   $h5_min: 14px;
@@ -195,7 +199,7 @@ h6,
 // Lists
 ul {
   list-style: disc outside;
-  padding-left: 1.375rem;
+  padding-left: 1em;
 
   li {
     padding-left: .35rem;

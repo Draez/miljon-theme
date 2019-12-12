@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Editable navigation menus.
  *
@@ -8,6 +9,6 @@
  * @package miljon
  */
 
-register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'miljon' ),
-) );
+register_nav_menus(array(
+	'primary' => __('Primary Menu', 'miljon'),
+));

@@ -23,6 +23,15 @@ if ( has_post_thumbnail() ) {
 	$featured_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 } ?>
 
-<section class="block block-hero<?php echo esc_attr( $block_class ); ?>"<?php if ( has_post_thumbnail() ) : ?> style="background-image: url('<?php echo esc_url( $featured_image ); ?>');<?php endif; ?>">
-  <div class="shade"></div>
-</section>
+<?php if (is_page_template('template-parts/work-template.php') ) { ?>
+	<section class="block block-work<?php echo esc_attr( $block_class ); ?>"<?php if ( has_post_thumbnail() ) : ?> style="background-image: url('<?php echo esc_url( $featured_image ); ?>');<?php endif; ?>">
+		<div class="shade"></div>
+		<h1 class="Title"><?php echo esc_html(the_title());?></h1>
+	</section>
+<?php } else { ?>
+
+	<section class="block block-hero<?php echo esc_attr( $block_class ); ?>"<?php if ( has_post_thumbnail() ) : ?> style="background-image: url('<?php echo esc_url( $featured_image ); ?>');<?php endif; ?>">
+		<div class="shade"></div>
+		<h1 class="Title"><?php echo esc_html(the_title());?></h1>
+	</section>
+<?php } ?>

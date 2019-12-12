@@ -20,11 +20,10 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('no-js'); ?>>
+<body <?php body_class('no-js'); ?> data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
   <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'miljon'); ?></a>
 
@@ -36,14 +35,14 @@
             <h1 class="site-title">
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-                Miljon
+                <?php include get_theme_file_path( '/svg/on-dark.svg' ); ?>
               </a>
             </h1>
           <?php else : ?>
             <p class="site-title">
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-                Miljon
+                <?php include get_theme_file_path( '/svg/on-dark.svg' ); ?>
               </a>
             </p>
           <?php endif;

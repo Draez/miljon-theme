@@ -11,39 +11,58 @@ document.body.classList.add('js');
 // <?php image_lazyload_tag( get_post_thumbnail_id( $post->ID ) ); ?>
 let images = document.querySelectorAll('.lazyload');
 lazyload(images, {
-     root: null,
-     rootMargin: "0px",
-     threshold: 0
+  root: null,
+  rootMargin: "0px",
+  threshold: 0
 });
 
 // jQuery start
-( function( $ ) {
+(function ($) {
+  var listHTML = $(".Title").html();
+  var listItems = listHTML.split(" ");
 
-	// Hide or show the "back to top" link
-	$(window).scroll(function() {
+  $(".Title").html("");
+  $.each(listItems, function (i, v) {
+    var item =
+      '<div class="Title-mask"><span class="Title-line">' + v + "</span></div>";
+    $(".Title").append(item);
+  });
+
+
+  // Hide or show the "back to top" link
+  $(window).scroll(function () {
 
     // Back to top
-  	var offset = 300; // Browser window scroll (in pixels) after which the "back to top" link is shown
-  	var offset_opacity = 1200; // Browser window scroll (in pixels) after which the link opacity is reduced
-  	var scroll_top_duration = 700; // Duration of the top scrolling animation (in ms)
+    var offset = 300; // Browser window scroll (in pixels) after which the "back to top" link is shown
+    var offset_opacity = 1200; // Browser window scroll (in pixels) after which the link opacity is reduced
+    var scroll_top_duration = 700; // Duration of the top scrolling animation (in ms)
     var link_class = '.top';
 
-		if( $(this).scrollTop() > offset ) {
-      $( link_class ).addClass('is-visible');
+    if ($(this).scrollTop() > offset) {
+      $(link_class).addClass('is-visible');
     } else {
-      $( link_class ).removeClass('is-visible');
+      $(link_class).removeClass('is-visible');
     }
 
-		if( $(this).scrollTop() > offset_opacity ) {
-			$( link_class ).addClass('fade-out');
-		} else {
-      $( link_class ).removeClass('fade-out');
+    if ($(this).scrollTop() > offset_opacity) {
+      $(link_class).addClass('fade-out');
+    } else {
+      $(link_class).removeClass('fade-out');
     }
 
-	});
+  });
 
   // Document ready start
-  $(function() {
+  $(function () {
+    // Animation for headings 
+    let titleMasks = $(".Title-mask").length; //12
+
+    for (let index = 0; index <= titleMasks; index++) {
+      let amount = $(".Title-mask:nth-child(" + index + ") .Title-line");
+      let delay = index * 80;
+      amount.css("animation-delay", delay + "ms");
+    }
+
 
     // Set up back to top link
     var moveTo = new MoveTo();
@@ -56,4 +75,4 @@ lazyload(images, {
 
   });
 
-} )( jQuery );
+})(jQuery);

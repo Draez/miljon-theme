@@ -40,14 +40,26 @@
     }
 
     &.button-ghost {
+      margin-top: 60px;
       background-color: transparent;
-      border: 1px solid $color-links;
+      border-radius: 30px;
+      //border: 2px solid #1D242C;
+      border: 2px solid rgba(#1D242C, .3);
       color: $color-links;
+      
+      a {
+        color: $color-darkgrey;
+        text-decoration: none;
+      }
     }
 
     &.button-ghost:hover {
-      background-color: $color-links;
-      color: #fff;
+      background-color:  $color-darkgrey;
+      
+      a {
+        color: #fff;
+      }
+
     }
   }
 }

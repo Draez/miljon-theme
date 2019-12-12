@@ -6,15 +6,15 @@
 // --------------------------------------------------------------
 
 // Colors
-$color-links: #045d30;
+$color-links: #00B5D4;
 $color-hover: #111;
-$color-body: #222;
-$color-headings: #222;
-$color-darkgrey: #4f5964;
-$color-lightgrey: #f5f5f5;
-$color-default-background: #f0f0f0;
+$color-body: #555;
+$color-headings: #1D242C;
+
+$color-darkgrey: #1D242C;
+$color-lightgrey: #4A5056;
+$color-default-background: #fff;
 $color-white: #fff;
-$color-black: #000;
 $color-shadows: #b8bbb3;
 
 // Font settings
@@ -26,7 +26,9 @@ $font-monospace: 'Menlo', 'Courier', monospace;
 
 // Font settings
 $font-min-size: 17px; // Minimum font size, on mobile
-$font-max-size: 20px; // Maximum font size, on desktop
+$font-max-size: 18px; // Maximum font size, on desktop
+$lead-max-size: 20px;
+$lead-min-size: 19px;
 $line-height: 1.6; // Line height
 $headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty well
 
@@ -37,7 +39,7 @@ $layout-max-width: 100%;
 // Container settings
 $container-default-pad-x: 2rem; // Default padding between containers horizontally. Tweak _general.scss if needed.
 $container-default-pad-y: 6.4rem; // Default vertical padding for containers
-$grid-base-size: 960px; // Layout container max width on desktop. This is default .container size
+$grid-base-size: 1110px; // Layout container max width on desktop. This is default .container size
 $article-max-width: 800px; // Max width for articles (see also $content_width in functions.php!)
 $container-mobile: 480px;
 $container-ipad: 770px;

@@ -19,28 +19,21 @@ get_header(); ?>
 
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
-    <!-- HEADER -->
-    <div class="entry-header">
-      <h1><?php echo esc_html_e('We create digital products and services 
-with a focus in user experience.', 'miljon'); ?></h1>
-    </div>
-
+    <!-- HEADER STARTS -->
+    <?php include('template-parts/frontpage/front-header.php'); ?>
     <!-- HEADER ENDS -->
 
-    <div class="block">
-      <div class="container">
+    <!-- SERVICES START -->
+    <?php include('template-parts/blocks/services/services.php'); ?>
+    <!-- SERVICES END -->
 
-        <?php if (have_posts()) {
-          while (have_posts()) {
-            the_post();
-            the_content();
-          }
-        } else {
-          get_template_part('template-parts/content', 'none');
-        } ?>
+    <!-- WORK STARTS -->
+    <?php include('template-parts/frontpage/works.php'); ?>
+    <!-- WORK ENDS -->
 
-      </div>
-    </div>
+    <!-- CTA STARTS -->
+    <?php include('template-parts/cta/cta.php'); ?>
+    <!-- CTA ENDS -->
 
   </main><!-- #main -->
 </div><!-- #primary -->

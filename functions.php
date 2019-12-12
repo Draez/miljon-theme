@@ -20,6 +20,7 @@ define( 'AIR_LIGHT_VERSION', '4.8.9' );
  * Requires.
  */
 require get_theme_file_path( '/inc/functions.php' );
+//require get_theme_file_path( '/inc/blocks.php' );
 require get_theme_file_path( '/inc/menus.php' );
 require get_theme_file_path( '/inc/nav-walker.php' );
 
@@ -98,3 +99,22 @@ function air_light_scripts() {
     'collapse'    => esc_html__( 'Close child menu', 'miljon' ),
   ) );
 } // end air_light_scripts
+
+
+if (function_exists('acf_register_block_type') ) {
+  add_action('acf/init', 'register_acf_block_types');
+} 
+
+function register_acf_block_types() {
+    acf_register_block_type(array(
+        'name' => 'services',
+        'title' => __('Services'),
+        'description' => __('A custom service block.'),
+        'render_template' => 'template-parts/blocks/services/services.php',
+        'category' => 'formatting',
+        'icon' => 'no',
+        'keywords' => array('services', 'quote' ),
+    ));
+
+}
+
