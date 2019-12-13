@@ -35,14 +35,14 @@
             <h1 class="site-title">
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-                <?php include get_theme_file_path( '/svg/on-dark.svg' ); ?>
+                <?php include get_theme_file_path( '/svg/method-draw-image.svg' ); ?>
               </a>
             </h1>
           <?php else : ?>
             <p class="site-title">
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-                <?php include get_theme_file_path( '/svg/on-dark.svg' ); ?>
+                <?php include get_theme_file_path( '/svg/method-draw-image.svg' ); ?>
               </a>
             </p>
           <?php endif;

@@ -509,7 +509,7 @@ body {
   font-size: 17px;
   font-size: 1.7rem;
   font-family: "Karla", "Helvetica Neue", Helvetica, sans-serif;
-  color: #555;
+  color: #1D242C;
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
       -ms-text-size-adjust: none;
@@ -2908,7 +2908,7 @@ form.search-form .search-submit {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #555;
+  background: #1D242C;
   width: 40px;
   height: 40px;
   text-decoration: none;
@@ -3572,6 +3572,10 @@ form.search-form .search-submit {
   max-width: 100%;
   margin: 0 auto;
   height: 80vh; }
+  @media (max-width: 480px) {
+    .entry-header, .block.block-work, .block.block-hero {
+      height: 100vh;
+      min-height: 100vh; } }
   .entry-header .Title, .block.block-work .Title, .block.block-hero .Title {
     color: #FFF;
     text-align: center;
@@ -3758,6 +3762,7 @@ form.search-form .search-submit {
   background: linear-gradient(180deg, rgba(29, 36, 44, 0) 0%, #1D242C 100%); }
 
 #work .bg {
+  background-position: center center;
   background-size: cover;
   height: 100%;
   -webkit-transition: 0.3s;
@@ -3806,6 +3811,7 @@ form.search-form .search-submit {
   background-color: rgba(29, 36, 44, 0.95); }
   #cta .no-margin {
     margin: 5px;
+    display: inline;
     border: 2px solid rgba(255, 255, 255, 0.3); }
     #cta .no-margin:hover {
       border: 2px solid #1D242C; }
@@ -3894,6 +3900,8 @@ section {
   padding: 0 0 80px 0;
   display: -webkit-box;
   display: flex; }
+  .service p, .service li {
+    color: #555555; }
   .service .service--content:nth-child(even) {
     margin: 0 60px; }
   .service .service--content:nth-child(odd) {
@@ -3909,6 +3917,139 @@ section {
       -webkit-box-orient: vertical;
       -webkit-box-direction: reverse;
               flex-direction: column-reverse; } }
+
+@media (max-width: 770px) {
+  #get-in-touch .ref-content {
+    padding: 20px 0;
+    display: block; } }
+
+#people {
+  background: #f9f9f9; }
+  #people .people-content {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* autoprefixer: off */
+    grid-auto-rows: minmax(100px, auto);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px; }
+    @supports not (display: grid) {
+      #people .people-content {
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden; }
+        #people .people-content > div {
+          width: calc(50% - 25px);
+          margin-right: 25px;
+          margin-bottom: 25px; }
+          #people .people-content > div:nth-child(2n+2) {
+            margin-right: 0; } }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      #people .people-content {
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden; }
+        #people .people-content > div {
+          width: calc(50% - 25px);
+          margin-right: 25px;
+          margin-bottom: 25px; }
+          #people .people-content > div:nth-child(2n+2) {
+            margin-right: 0; } }
+    @supports (-ms-ime-align: auto) {
+      #people .people-content {
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden; }
+        #people .people-content > div {
+          width: calc(50% - 25px);
+          margin-right: 25px;
+          margin-bottom: 25px; }
+          #people .people-content > div:nth-child(2n+2) {
+            margin-right: 0; } }
+    @media (max-width: 480px) {
+      #people .people-content {
+        display: block; } }
+  #people .people-content--heading {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center; }
+    @media (max-width: 770px) {
+      #people .people-content--heading {
+        display: block; } }
+    #people .people-content--heading p {
+      margin: 0; }
+  #people .info {
+    margin: 20px 0; }
+    @media (max-width: 480px) {
+      #people .info {
+        margin-bottom: 40px; } }
+  #people .circle {
+    overflow: hidden;
+    height: 120px;
+    width: 120px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 25px 0 0; }
+    #people .circle img {
+      margin: 0 auto;
+      height: 100%; }
+
+#map .map-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* autoprefixer: off */
+  grid-auto-rows: minmax(100px, auto);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px; }
+  @supports not (display: grid) {
+    #map .map-content {
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden; }
+      #map .map-content > div {
+        width: calc(50% - 25px);
+        margin-right: 25px;
+        margin-bottom: 25px; }
+        #map .map-content > div:nth-child(2n+2) {
+          margin-right: 0; } }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    #map .map-content {
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden; }
+      #map .map-content > div {
+        width: calc(50% - 25px);
+        margin-right: 25px;
+        margin-bottom: 25px; }
+        #map .map-content > div:nth-child(2n+2) {
+          margin-right: 0; } }
+  @supports (-ms-ime-align: auto) {
+    #map .map-content {
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden; }
+      #map .map-content > div {
+        width: calc(50% - 25px);
+        margin-right: 25px;
+        margin-bottom: 25px; }
+        #map .map-content > div:nth-child(2n+2) {
+          margin-right: 0; } }
+  @media (max-width: 480px) {
+    #map .map-content {
+      display: block; }
+      #map .map-content .map-content--info {
+        margin-bottom: 60px; } }
+
+#map #map-container iframe {
+  max-width: 100%; }
 
 .cat-links,
 .tags-links {
@@ -4065,7 +4206,7 @@ pre {
 .entry-header .entry-title, .block.block-work .entry-title, .block.block-hero .entry-title {
   margin-bottom: .1em; }
   .entry-header .entry-title a, .block.block-work .entry-title a, .block.block-hero .entry-title a {
-    color: #555; }
+    color: #1D242C; }
 
 .entry-meta * {
   color: #1D242C; }
@@ -4190,12 +4331,12 @@ ul.tags {
       float: right;
       border-radius: 50%; }
     .comment-list li .comment-author {
-      color: #555;
+      color: #1D242C;
       margin-top: 0;
       margin-bottom: 10px;
       padding: 0; }
       .comment-list li .comment-author a {
-        color: #555; }
+        color: #1D242C; }
     .comment-list li .comment-time {
       padding: 0;
       margin: 0; }

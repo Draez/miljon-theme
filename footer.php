@@ -23,7 +23,12 @@ $query = new WP_Query( $args ); ?>
 			<div class="wrapper">
 			<?php if ( $query->have_posts()) : while ( $query->have_posts() ) : $query->the_post(); ?>
 				<div class="col">
-					<h4>Miljon</h4>
+          <h4>
+            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+              <span class="screen-reader-text"><?php bloginfo('name'); ?></span>
+              <?php include get_theme_file_path( '/svg/method-draw-image.svg' ); ?>
+            </a>
+          </h4>
 				</div>
 				<div class="col">
 					<h4>Explore</h4>
@@ -68,7 +73,7 @@ $query = new WP_Query( $args ); ?>
 	</footer><!-- FOOTER ENDS -->
 
 </div><!-- #page -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <?php wp_footer(); ?>
 
 </body>

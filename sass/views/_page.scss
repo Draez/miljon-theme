@@ -57,6 +57,10 @@ section {
 .service {
   padding: 0 0 80px 0;
   display: flex;
+
+  p, li{
+    color: #555555
+  }
   
   .service--content:nth-child(even) {
     margin:0 60px;
@@ -78,3 +82,84 @@ section {
 
   }
 }
+
+
+#get-in-touch {
+  .ref-content {
+    @media (max-width: $container-ipad) {
+      padding: 20px 0;
+      display: block;
+    }
+  }
+
+}
+
+#people {
+  background: #f9f9f9;
+    .people-content {
+      margin-top: 60px;
+      @include grid(2);
+
+      @media (max-width: $container-mobile) {
+        display: block;
+      }
+
+    }
+
+    .people-content--heading {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: $container-ipad) {
+        display: block;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .info {
+      margin: 20px 0;
+
+      @media (max-width: $container-mobile) {
+        margin-bottom: 40px;
+      }
+    }
+
+    .circle {
+      overflow: hidden;
+      height: 120px;
+      width: 120px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 25px 0 0;
+
+      img {
+          margin: 0 auto;
+          height: 100%;
+      }
+  }
+}
+
+#map {
+  .map-content {
+    @include grid(2);
+
+    @media (max-width: $container-mobile) {
+      display: block;
+
+      .map-content--info {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  #map-container iframe {
+    max-width: 100%;
+  }
+  
+}
+
+
