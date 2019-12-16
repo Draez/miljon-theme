@@ -470,45 +470,13 @@ a.global-link {
   top: 0;
   left: 0; }
 
-@font-face {
-  font-family: "Karla";
-  font-display: auto;
-  src: url("../fonts/karla-regular.eot");
-  src: url("../fonts/karla-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/karla-regular.woff") format("woff"), url("../fonts/karla-regular.woff2") format("woff2"), url("../fonts/karla-regular.ttf") format("truetype"), url("../fonts/karla-regular.svg#Karla") format("svg");
-  font-style: normal;
-  font-weight: 400; }
-
-@font-face {
-  font-family: "Karla";
-  font-display: auto;
-  src: url("../fonts/karla-italic.eot");
-  src: url("../fonts/karla-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/karla-italic.woff") format("woff"), url("../fonts/karla-italic.woff2") format("woff2"), url("../fonts/karla-italic.ttf") format("truetype"), url("../fonts/karla-italic.svg#Karla") format("svg");
-  font-style: italic;
-  font-weight: 400; }
-
-@font-face {
-  font-family: "Karla";
-  font-display: auto;
-  src: url("../fonts/karla-bold.eot");
-  src: url("../fonts/karla-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/karla-bold.woff") format("woff"), url("../fonts/karla-bold.woff2") format("woff2"), url("../fonts/karla-bold.ttf") format("truetype"), url("../fonts/karla-bold.svg#Karla") format("svg");
-  font-style: normal;
-  font-weight: 700; }
-
-@font-face {
-  font-family: "Karla";
-  font-display: auto;
-  src: url("../fonts/karla-bolditalic.eot");
-  src: url("../fonts/karla-bolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/karla-bolditalic.woff") format("woff"), url("../fonts/karla-bolditalic.woff2") format("woff2"), url("../fonts/karla-bolditalic.ttf") format("truetype"), url("../fonts/karla-bolditalic.svg#Karla") format("svg");
-  font-style: italic;
-  font-weight: 700; }
-
 :root {
   font-size: 62.5%; }
 
 body {
   font-size: 17px;
   font-size: 1.7rem;
-  font-family: "Karla", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "benton-sans", sans-serif;
   color: #1D242C;
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
@@ -654,8 +622,8 @@ h4,
 h5,
 h6 {
   color: #1D242C;
-  font-family: "Karla", "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 700; }
+  font-family: "benton-sans", sans-serif;
+  font-weight: 600; }
 
 h1 {
   font-size: 32px; }
@@ -843,10 +811,10 @@ pre {
 .site-header {
   position: relative;
   z-index: 15;
-  padding-bottom: 20px;
-  padding-bottom: 2rem;
-  padding-top: 20px;
-  padding-top: 2rem;
+  padding-bottom: 30px;
+  padding-bottom: 3rem;
+  padding-top: 30px;
+  padding-top: 3rem;
   padding-left: 20px;
   padding-left: 2rem;
   padding-right: 20px;
@@ -970,11 +938,18 @@ pre {
     @media (max-width: 480px) {
       .site-footer .wrapper {
         display: block; } }
+    .site-footer .wrapper .col .logo {
+      opacity: 1; }
+      .site-footer .wrapper .col .logo a:hover:after {
+        width: 0; }
     .site-footer .wrapper .col h4 {
       opacity: .5;
-      color: #FFF; }
+      color: #FFF;
+      margin-bottom: 0; }
     .site-footer .wrapper .col p {
-      line-height: 32px; }
+      margin: 20px 0;
+      line-height: 32px;
+      font-size: 16px; }
     .site-footer .wrapper .col ul {
       padding: 0;
       list-style: none; }
@@ -984,8 +959,21 @@ pre {
     .site-footer .wrapper .col a {
       color: #FFF;
       text-decoration: none; }
-      .site-footer .wrapper .col a:hover {
-        opacity: 0.5; }
+      .site-footer .wrapper .col a:after {
+        content: "";
+        /* This is necessary for the pseudo element to work. */
+        display: block;
+        /* This will put the pseudo element on its own line. */
+        width: 0%;
+        /* Change this to whatever width you want to have before hover. */
+        border-bottom: 2px solid #FFF;
+        /* This creates the border. Replace black with whatever color you want. */
+        -webkit-transition: .3s;
+        transition: .3s;
+        /* This establishes the amount of time in seconds the animation should take from start to finish */ }
+      .site-footer .wrapper .col a:hover:after {
+        width: 15%;
+        /* This will be the new width of your border when on hover */ }
 
 .content-area button,
 .content-area .button,
@@ -997,6 +985,7 @@ pre {
 .site-footer input[type="reset"],
 .site-footer input[type="submit"],
 .site-footer input[type="button"] {
+  font-weight: 600;
   font-size: 16px;
   font-size: 1.6rem;
   background: #00B5D4;
@@ -1013,7 +1002,7 @@ pre {
   cursor: pointer;
   -webkit-transition: 150ms linear background;
   transition: 150ms linear background;
-  font-family: "Karla", "Helvetica Neue", Helvetica, sans-serif; }
+  font-family: "benton-sans", sans-serif; }
   @media (max-width: 480px) {
     .content-area button,
     .content-area .button,
@@ -1058,7 +1047,6 @@ pre {
   .site-footer input[type="reset"].button-ghost,
   .site-footer input[type="submit"].button-ghost,
   .site-footer input[type="button"].button-ghost {
-    margin-top: 60px;
     background-color: transparent;
     border-radius: 30px;
     border: 2px solid rgba(29, 36, 44, 0.3);
@@ -1133,7 +1121,7 @@ input[type="month"],
 input[type="week"],
 input[type="email"],
 input[type="search"] {
-  font-family: "Karla", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "benton-sans", sans-serif;
   background: #f0f0f0;
   border: 0;
   padding: 15px 20px;
@@ -1503,14 +1491,33 @@ form.search-form .search-submit {
         border-bottom: 2px solid #FFF;
         opacity: 1; }
       .nav-primary .menu-item a {
+        -webkit-transition: width 2s, height 4s;
+        transition: width 2s, height 4s;
         opacity: .8;
         color: #333;
         font-size: 18px;
-        font-weight: 400; }
+        font-weight: 400;
+        padding-bottom: 4px; }
         .nav-primary .menu-item a.disabled {
           color: #bbb; }
         .nav-primary .menu-item a:hover, .nav-primary .menu-item a:focus, .nav-primary .menu-item a:active, .nav-primary .menu-item a.highlighted, .nav-primary .menu-item a.current {
-          color: #333; }
+          color: #FFF; }
+        .nav-primary .menu-item a:after {
+          padding-bottom: 4px;
+          content: "";
+          /* This is necessary for the pseudo element to work. */
+          display: block;
+          /* This will put the pseudo element on its own line. */
+          width: 0%;
+          /* Change this to whatever width you want to have before hover. */
+          border-bottom: 2px solid #FFF;
+          /* This creates the border. Replace black with whatever color you want. */
+          -webkit-transition: .3s;
+          transition: .3s;
+          /* This establishes the amount of time in seconds the animation should take from start to finish */ }
+        .nav-primary .menu-item a:hover:after {
+          width: 100%;
+          /* This will be the new width of your border when on hover */ }
       .nav-primary .menu-item ul {
         position: absolute;
         background: #fff;
@@ -2747,16 +2754,16 @@ form.search-form .search-submit {
     width: 100vw;
     background: #1D242C;
     overflow: auto;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
+    -webkit-transition-duration: 800ms;
+            transition-duration: 800ms;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0.3, 0.65, 0.2);
+            transition-timing-function: cubic-bezier(0.7, 0.3, 0.65, 0.2);
     margin: 0;
     display: block;
     will-change: transform;
     -webkit-transform: translateX(100vw);
             transform: translateX(100vw);
     /* The default, as in, you get this without defining anything */
-    -webkit-transition-timing-function: ease;
-            transition-timing-function: ease;
     /* Also the same as */ }
     .nav-primary .menu-items {
       -webkit-transition: all .55s;
@@ -3496,7 +3503,7 @@ form.search-form .search-submit {
       margin-top: .7em;
       font-style: italic;
       display: block;
-      font-family: "Karla", "Helvetica Neue", Helvetica, sans-serif;
+      font-family: "benton-sans", sans-serif;
       line-height: 1.2;
       text-align: center;
       opacity: .6; }
@@ -3577,6 +3584,7 @@ form.search-form .search-submit {
       height: 100vh;
       min-height: 100vh; } }
   .entry-header .Title, .block.block-work .Title, .block.block-hero .Title {
+    max-width: 770px;
     color: #FFF;
     text-align: center;
     margin: 0;
@@ -3625,68 +3633,11 @@ form.search-form .search-submit {
     -webkit-transform: translate(0%, 0%) matrix(1, 0, 0, 1, 0, 0);
             transform: translate(0%, 0%) matrix(1, 0, 0, 1, 0, 0); } }
 
-#services {
+#lead {
   text-align: center; }
-  #services h2 {
-    margin-bottom: 60px; }
-  #services .row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* autoprefixer: off */
-    grid-auto-rows: minmax(100px, auto);
-    grid-column-gap: 25px;
-    grid-row-gap: 25px; }
-    @supports not (display: grid) {
-      #services .row {
-        display: -webkit-box;
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden; }
-        #services .row > div {
-          width: calc(33.33333% - 25px);
-          margin-right: 25px;
-          margin-bottom: 25px; }
-          #services .row > div:nth-child(3n+3) {
-            margin-right: 0; } }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      #services .row {
-        display: -webkit-box;
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden; }
-        #services .row > div {
-          width: calc(33.33333% - 25px);
-          margin-right: 25px;
-          margin-bottom: 25px; }
-          #services .row > div:nth-child(3n+3) {
-            margin-right: 0; } }
-    @supports (-ms-ime-align: auto) {
-      #services .row {
-        display: -webkit-box;
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden; }
-        #services .row > div {
-          width: calc(33.33333% - 25px);
-          margin-right: 25px;
-          margin-bottom: 25px; }
-          #services .row > div:nth-child(3n+3) {
-            margin-right: 0; } }
-    @media (max-width: 480px) {
-      #services .row {
-        display: block; }
-        #services .row .col {
-          margin: 40px; } }
-    #services .row .circle {
-      overflow: hidden;
-      height: 120px;
-      width: 120px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block; }
-      #services .row .circle img {
-        margin: 0 auto;
-        height: 100%; }
+  #lead h2 {
+    font-weight: 400;
+    line-height: 46px; }
 
 @media (min-width: 770px) {
   #work .wrapper {
@@ -3753,6 +3704,8 @@ form.search-form .search-submit {
   font-size: 20px; }
 
 #work .rectangle {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   position: absolute;
   bottom: 0;
   height: 250px;
@@ -3781,6 +3734,10 @@ form.search-form .search-submit {
   #work .box2:hover .bg {
     -webkit-transform: scale(1.1);
             transform: scale(1.1); }
+  #work .box1:hover .rectangle,
+  #work .box2:hover .rectangle {
+    height: 100%;
+    opacity: 1; }
 
 @media (min-width: 770px) {
   #work .box1 {
@@ -3918,13 +3875,25 @@ section {
       -webkit-box-direction: reverse;
               flex-direction: column-reverse; } }
 
-@media (max-width: 770px) {
+#get-in-touch a {
+  color: #1D242C;
+  text-decoration: none; }
+  #get-in-touch a:hover {
+    text-decoration: underline; }
+
+@media (max-width: 480px) {
   #get-in-touch .ref-content {
-    padding: 20px 0;
-    display: block; } }
+    display: block; }
+    #get-in-touch .ref-content--heading {
+      padding: 20px 0; } }
 
 #people {
   background: #f9f9f9; }
+  #people a {
+    color: #1D242C;
+    text-decoration: none; }
+    #people a:hover {
+      text-decoration: underline; }
   #people .people-content {
     margin-top: 60px;
     display: grid;
@@ -3989,8 +3958,8 @@ section {
         margin-bottom: 40px; } }
   #people .circle {
     overflow: hidden;
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -3999,7 +3968,10 @@ section {
       margin: 0 auto;
       height: 100%; }
 
-#map .map-content {
+#contact-info .icons a {
+  margin: 0 7px 0 0; }
+
+#contact-info .map-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   /* autoprefixer: off */
@@ -4007,49 +3979,46 @@ section {
   grid-column-gap: 25px;
   grid-row-gap: 25px; }
   @supports not (display: grid) {
-    #map .map-content {
+    #contact-info .map-content {
       display: -webkit-box;
       display: flex;
       flex-wrap: wrap;
       overflow: hidden; }
-      #map .map-content > div {
+      #contact-info .map-content > div {
         width: calc(50% - 25px);
         margin-right: 25px;
         margin-bottom: 25px; }
-        #map .map-content > div:nth-child(2n+2) {
+        #contact-info .map-content > div:nth-child(2n+2) {
           margin-right: 0; } }
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    #map .map-content {
+    #contact-info .map-content {
       display: -webkit-box;
       display: flex;
       flex-wrap: wrap;
       overflow: hidden; }
-      #map .map-content > div {
+      #contact-info .map-content > div {
         width: calc(50% - 25px);
         margin-right: 25px;
         margin-bottom: 25px; }
-        #map .map-content > div:nth-child(2n+2) {
+        #contact-info .map-content > div:nth-child(2n+2) {
           margin-right: 0; } }
   @supports (-ms-ime-align: auto) {
-    #map .map-content {
+    #contact-info .map-content {
       display: -webkit-box;
       display: flex;
       flex-wrap: wrap;
       overflow: hidden; }
-      #map .map-content > div {
+      #contact-info .map-content > div {
         width: calc(50% - 25px);
         margin-right: 25px;
         margin-bottom: 25px; }
-        #map .map-content > div:nth-child(2n+2) {
+        #contact-info .map-content > div:nth-child(2n+2) {
           margin-right: 0; } }
   @media (max-width: 480px) {
-    #map .map-content {
+    #contact-info .map-content {
       display: block; }
-      #map .map-content .map-content--info {
+      #contact-info .map-content .map-content--info {
         margin-bottom: 60px; } }
-
-#map #map-container iframe {
-  max-width: 100%; }
 
 .cat-links,
 .tags-links {
@@ -4121,7 +4090,7 @@ table {
 
 td,
 th {
-  font-family: "Karla", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "benton-sans", sans-serif;
   height: 30px;
   height: 3rem;
   padding: 10px;

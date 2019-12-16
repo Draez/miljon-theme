@@ -20,8 +20,8 @@ $color-shadows: #b8bbb3;
 // Font settings
 // You can use these font stacks normally with `font-family: $font-sans;` for instance.`
 // Please set up fonts in sass/layout/_typography.scss
-$font-base: 'Karla', 'Helvetica Neue', Helvetica, sans-serif;
-$font-headings: 'Karla', 'Helvetica Neue', Helvetica, sans-serif;
+$font-base: 'benton-sans', sans-serif;
+$font-headings: 'benton-sans', sans-serif;
 $font-monospace: 'Menlo', 'Courier', monospace;
 
 // Font settings
@@ -30,7 +30,7 @@ $font-max-size: 18px; // Maximum font size, on desktop
 $lead-max-size: 20px;
 $lead-min-size: 19px;
 $line-height: 1.6; // Line height
-$headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty well
+$headings-weight: 600; // Default title weight. Usually 700 or 900 works pretty well
 
 // Breakpoints
 $grid-type: fluid; // 'fluid' or 'snappy'

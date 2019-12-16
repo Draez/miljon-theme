@@ -24,7 +24,7 @@ get_header(); ?>
     <!-- HEADER ENDS -->
 
     <!-- SERVICES START -->
-    <?php include('template-parts/blocks/services/services.php'); ?>
+    <?php include('template-parts/frontpage/lead.php'); ?>
     <!-- SERVICES END -->
 
     <!-- WORK STARTS -->

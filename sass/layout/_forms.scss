@@ -13,6 +13,7 @@
   input[type="reset"],
   input[type="submit"],
   input[type="button"] {
+    font-weight: 600;
     font-size: 1.6rem;
     background: $color-links;
     color: #fff;
@@ -40,7 +41,6 @@
     }
 
     &.button-ghost {
-      margin-top: 60px;
       background-color: transparent;
       border-radius: 30px;
       //border: 2px solid #1D242C;

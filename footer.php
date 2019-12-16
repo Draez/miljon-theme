@@ -23,7 +23,7 @@ $query = new WP_Query( $args ); ?>
 			<div class="wrapper">
 			<?php if ( $query->have_posts()) : while ( $query->have_posts() ) : $query->the_post(); ?>
 				<div class="col">
-          <h4>
+          <h4 class="logo">
             <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
               <span class="screen-reader-text"><?php bloginfo('name'); ?></span>
               <?php include get_theme_file_path( '/svg/method-draw-image.svg' ); ?>
@@ -73,6 +73,54 @@ $query = new WP_Query( $args ); ?>
 	</footer><!-- FOOTER ENDS -->
 
 </div><!-- #page -->
+
+
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+<script>
+mapboxgl.accessToken = "pk.eyJ1IjoibWlsam9uIiwiYSI6ImNrNDdhY3l6bDBxYnUzZmp0OGM2N280d2cifQ.CEfTwFZzFzWPL30xATCg2w";
+ 
+/* Map: This represents the map on the page. */
+var map = new mapboxgl.Map({
+container: "map",
+style: "mapbox://styles/mapbox/dark-v10",
+zoom: 13,
+center: [24.9342,60.1642]
+});
+ 
+map.on("load", function () {
+/* Image: An image is loaded and added to the map. */
+map.loadImage("https://i.imgur.com/MK4NUzI.png", function(error, image) {
+if (error) throw error;
+map.addImage("custom-marker", image);
+/* Style layer: A style layer ties together the source and image and specifies how they are displayed on the map. */
+map.addLayer({
+id: "markers",
+type: "symbol",
+/* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+source: {
+type: "geojson",
+data: {
+type: 'FeatureCollection',
+features: [
+{
+type: 'Feature',
+properties: {},
+geometry: {
+type: "Point",
+coordinates: [24.934494, 60.163964]
+}
+}
+]
+}
+},
+layout: {
+"icon-image": "custom-marker",
+}
+});
+});
+});
+</script>
 
 <?php wp_footer(); ?>
 

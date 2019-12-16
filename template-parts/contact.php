@@ -19,11 +19,11 @@ get_header(); ?>
             <div class="ref-content">
                 <div class="ref-content--heading">
                     <h3>Send us an email</h3>
-                    <p><?php the_field('email'); ?></p>
+                    <a href="mailto: <?php the_field('email'); ?>"><?php the_field('email'); ?></a>
                 </div>
                 <div class="ref-content--description">
                     <h3>Call us</h3>
-                    <p>+358 (0) 45 268 3268</p>
+                    <a href="tel: +358 45 268 3268"> <?php the_field('phone'); ?></a>
                 </div>
             </div>
         </div>
@@ -52,25 +52,19 @@ get_header(); ?>
         </div>
     </section>
 
-    <section id="map">
+    <section id="contact-info">
         <div class="container">
             <div class="map-content">
                 <div class="map-content--info">
-                    <h3>Miljon Solutions Oy</h3>
-                    <p>Bulevardi 21<br>
-                    00180 Helsinki<br>
-                    Finland</p>
-                    <p>Entrance from Albertinkatu 25</p>
-                    <?php if( have_rows('social') ): ?>
-                        <?php while ( have_rows('social') ) : the_row(); ?>
-                            <?php $image = get_sub_field('image');
-                                  $link = get_sub_field('url') ?>
-                            <a href="<?php echo $link; ?>" target="_blank"><img src="<?php echo $image; ?>" /></a>
-                    <?php endwhile; endif; ?>
+                    <?php the_field('contact'); ?>
+
+                    <div class="icons">
+                        <a href="#" target="_blank"><?php include get_theme_file_path( '/svg/linkedin.svg' ); ?></a>
+                        <a href="#" target="_blank"><?php include get_theme_file_path( '/svg/instagram.svg' ); ?></a>
+                        <a href="#" target="_blank"><?php include get_theme_file_path( '/svg/dribbble.svg' ); ?></a>
+                    </div>
                 </div>
-                <div class="map-content--map">
-                    <div id="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1985.0236128905485!2d24.93226011618048!3d60.16378795087773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920bca64a8ca5d%3A0x5326aedbd6f8380b!2sBulevardi%2021%2C%2000180%20Helsinki!5e0!3m2!1sfi!2sfi!4v1576225329013!5m2!1sfi!2sfi" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
-                </div>
+                <div id='map' style='width: 100%; height: 400px;'></div>
             </div>
         </div>
     </section>

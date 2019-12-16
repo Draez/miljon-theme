@@ -85,10 +85,22 @@ section {
 
 
 #get-in-touch {
+  a {
+    color: $color-darkgrey;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   .ref-content {
-    @media (max-width: $container-ipad) {
-      padding: 20px 0;
+    @media (max-width: $container-mobile) {
       display: block;
+
+      &--heading {
+        padding: 20px 0;
+      }
     }
   }
 
@@ -96,6 +108,15 @@ section {
 
 #people {
   background: #f9f9f9;
+
+  a {
+    color: $color-darkgrey;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
     .people-content {
       margin-top: 60px;
       @include grid(2);
@@ -129,8 +150,8 @@ section {
 
     .circle {
       overflow: hidden;
-      height: 120px;
-      width: 120px;
+      height: 100px;
+      width: 100px;
       background-color: #bbb;
       border-radius: 50%;
       display: inline-block;
@@ -143,7 +164,11 @@ section {
   }
 }
 
-#map {
+#contact-info {
+  .icons a{
+    margin: 0 7px 0 0; 
+  }
+
   .map-content {
     @include grid(2);
 
@@ -151,13 +176,11 @@ section {
       display: block;
 
       .map-content--info {
-        margin-bottom: 60px;
+        margin-bottom: 60px;     
+        
+
       }
     }
-  }
-
-  #map-container iframe {
-    max-width: 100%;
   }
   
 }

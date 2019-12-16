@@ -251,12 +251,13 @@ $absolute-navigation: true;
       }
    
       // Main level
-
       a {
+        transition: width 2s, height 4s;
         opacity: .8;
         color: $color-nav-links;
         font-size: 18px;
         font-weight: 400;
+        padding-bottom: 4px;
 
         &.disabled {
           color: #bbb;
@@ -268,8 +269,20 @@ $absolute-navigation: true;
         &:active,
         &.highlighted,
         &.current {
-          color: $color-nav-links;
-       
+          color: #FFF;
+        }
+
+        &:after {
+          padding-bottom: 4px;
+            content: ""; /* This is necessary for the pseudo element to work. */ 
+            display: block; /* This will put the pseudo element on its own line. */
+            width: 0%; /* Change this to whatever width you want to have before hover. */
+            border-bottom: 2px solid #FFF; /* This creates the border. Replace black with whatever color you want. */
+            transition: .3s; /* This establishes the amount of time in seconds the animation should take from start to finish */
+        }
+
+        &:hover:after {
+            width: 100%; /* This will be the new width of your border when on hover */
         }
       }
 

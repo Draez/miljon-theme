@@ -26,6 +26,7 @@
 
     // === <h1> wrapper ======
     .Title {
+        max-width: 770px;
         @include responsive-font(2.4vw, 22px, 48px);
         color: #FFF;
         text-align: center;
@@ -78,36 +79,12 @@
 }
 
 // SERVICES
-#services {
+#lead {
     text-align: center;
 
     h2 {
-        margin-bottom: 60px;
-    }
-    .row {
-        @include grid(3);
-        @media (max-width: $container-mobile) {
-            display: block;
-
-            .col {
-                margin: 40px;
-            }
-        }
-
-        .circle {
-            overflow: hidden;
-            height: 120px;
-            width: 120px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-
-            img {
-                margin: 0 auto;
-                height: 100%;
-            }
-        }
-   
+        font-weight: 400;
+        line-height: 46px;
     }
 }
 
@@ -140,6 +117,7 @@
 
     .rectangle {
         // Keep rectangle at bottom of background
+        transition: 0.3s;
         position: absolute;	
         bottom: 0;
         height: 250px;	
@@ -169,6 +147,11 @@
 
         &:hover .bg {
             transform: scale(1.1);
+        }
+
+        &:hover .rectangle {
+            height: 100%;
+            opacity: 1;
         }
     }
 
