@@ -22,7 +22,7 @@ get_header(); ?>
     <!-- HEADER STARTS -->
     <?php include('template-parts/frontpage/front-header.php'); ?>
     <!-- HEADER ENDS -->
-<h1>deploy tesst</h1>
+    
     <!-- SERVICES START -->
     <?php include('template-parts/frontpage/lead.php'); ?>
     <!-- SERVICES END -->
