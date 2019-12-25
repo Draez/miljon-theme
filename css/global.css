@@ -940,8 +940,6 @@ pre {
         display: block; } }
     .site-footer .wrapper .col .logo {
       opacity: 1; }
-      .site-footer .wrapper .col .logo a:hover:after {
-        width: 0; }
     .site-footer .wrapper .col h4 {
       opacity: .5;
       color: #FFF;
@@ -959,21 +957,8 @@ pre {
     .site-footer .wrapper .col a {
       color: #FFF;
       text-decoration: none; }
-      .site-footer .wrapper .col a:after {
-        content: "";
-        /* This is necessary for the pseudo element to work. */
-        display: block;
-        /* This will put the pseudo element on its own line. */
-        width: 0%;
-        /* Change this to whatever width you want to have before hover. */
-        border-bottom: 2px solid #FFF;
-        /* This creates the border. Replace black with whatever color you want. */
-        -webkit-transition: .3s;
-        transition: .3s;
-        /* This establishes the amount of time in seconds the animation should take from start to finish */ }
-      .site-footer .wrapper .col a:hover:after {
-        width: 15%;
-        /* This will be the new width of your border when on hover */ }
+      .site-footer .wrapper .col a:hover {
+        text-decoration: underline; }
 
 .content-area button,
 .content-area .button,
@@ -3634,6 +3619,7 @@ form.search-form .search-submit {
             transform: translate(0%, 0%) matrix(1, 0, 0, 1, 0, 0); } }
 
 #lead {
+  background: #f9f9f9;
   text-align: center; }
   #lead h2 {
     font-weight: 400;
