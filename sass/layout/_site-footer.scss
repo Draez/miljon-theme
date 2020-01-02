@@ -40,6 +40,7 @@
 				margin-bottom: 0;
 			}
 
+<<<<<<< HEAD
 			p {
 				margin: 20px 0;
 				line-height: 32px;
@@ -54,6 +55,17 @@
 				padding: 0;
 				line-height: 36px;
 			}
+=======
+    .col {
+      .logo {
+        opacity: 1;
+      }
+      h4 {
+        opacity: .5;
+        color: #FFF;
+        margin-bottom: 0;
+      }
+>>>>>>> 78461da1708f7de9cab9ce0811999bac50585e9f
 
 			a {
 				color: #fff;
@@ -69,6 +81,7 @@
 	.copyright-wrapper {
 		border-top: 1px solid rgba(255, 255, 255, 0.1);
 
+<<<<<<< HEAD
 		.copyright {
 			@extend .container;
 			padding-top: 3rem;
@@ -84,4 +97,12 @@
 			}
 		}
 	}
+=======
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+>>>>>>> 78461da1708f7de9cab9ce0811999bac50585e9f
 }

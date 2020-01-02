@@ -6,7 +6,6 @@
 
           <?php $index = get_row_index(); ?>
 
-
           <div class="one-box">
             <?php if ($index % 2 == 0) { ?>
               <div class="box" style="margin-top: 80px">

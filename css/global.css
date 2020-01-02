@@ -959,6 +959,7 @@ pre {
       text-decoration: none; }
       .site-footer .wrapper .col a:hover {
         text-decoration: underline; }
+<<<<<<< HEAD
   .site-footer .copyright-wrapper {
     border-top: 1px solid rgba(255, 255, 255, 0.1); }
     .site-footer .copyright-wrapper .copyright {
@@ -978,6 +979,8 @@ pre {
         opacity: 0.6;
         font-size: 14px;
         font-size: 1.4rem; }
+=======
+>>>>>>> 78461da1708f7de9cab9ce0811999bac50585e9f
 
 .content-area button,
 .content-area .button,
