@@ -19,6 +19,7 @@ get_header(); ?>
 
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
+
     <!-- HEADER STARTS -->
     <?php include('template-parts/frontpage/front-header.php'); ?>
     <!-- HEADER ENDS -->

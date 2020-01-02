@@ -5,184 +5,175 @@
 // particular layout.
 // ------------------------------------------------
 section {
-  padding: 60px 0;
+	padding: 60px 0;
 }
 
 .block.block-page {
-  @media (min-width: $container-mobile) {
-    min-height: 300px;
-  }
+	@media (min-width: $container-mobile) {
+		min-height: 300px;
+	}
 }
 
-.block.block-work, .block.block-hero {
-  @extend .entry-header;
+.block.block-work,
+.block.block-hero {
+	@extend .entry-header;
 }
 
 .block.block-hero {
-  min-height: 60vh;
-  height: 60vh;
+	min-height: 60vh;
+	height: 60vh;
 }
 
 .ref-content {
-  @include grid(2);
-  grid-template-columns: 1fr 2fr;
+	@include grid(2);
+	grid-template-columns: 1fr 2fr;
 
-  @media (max-width: $container-mobile) {
-    display: block;
-  }
+	@media (max-width: $container-mobile) {
+		display: block;
+	}
 
-  @media (min-width: $container-mobile) {
-    h2 {
-      margin: 0;
-    }
-  }
+	@media (min-width: $container-mobile) {
+		h2 {
+			margin: 0;
+		}
+	}
 
-  .category {
-    opacity: .5;
-    font-size: 20px;
-  }
+	.category {
+		opacity: .5;
+		font-size: 20px;
+		line-height: $line-height;
+	}
 }
 
 .large-images {
-  padding: 60px 0;
-  .large-image {
-    margin: 40px 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 700px;
-  }
+	padding: 60px 0;
+
+	.large-image {
+		margin: 40px 0;
+	}
 }
 
 .service {
-  padding: 0 0 80px 0;
-  display: flex;
+	padding: 0 0 80px 0;
+	display: flex;
 
-  p, li{
-    color: #555555
-  }
-  
-  .service--content:nth-child(even) {
-    margin:0 60px;
-  }
-  .service--content:nth-child(odd) {
-    margin:0 60px 0 0;
-  }
+	p,
+	li {
+		color: #555555;
+	}
 
-  @media (max-width: $container-ipad) {
-    &:nth-child(even) {
-      flex-direction: column;
-    }
-    .service--content:nth-child(even) {
-      margin: 0 60px 0 0;
-    }
-    &:nth-child(odd) {
-      flex-direction: column-reverse;
-    }
+	.service--content:nth-child(even) {
+		margin: 0 60px;
+	}
+	.service--content:nth-child(odd) {
+		margin: 0 60px 0 0;
+	}
 
-  }
+	@media (max-width: $container-ipad) {
+		&:nth-child(even) {
+			flex-direction: column;
+		}
+		.service--content:nth-child(even) {
+			margin: 0 60px 0 0;
+		}
+		&:nth-child(odd) {
+			flex-direction: column-reverse;
+		}
+	}
 }
 
-
 #get-in-touch {
-  a {
-    color: $color-darkgrey;
-    text-decoration: none;
+	a {
+		color: $color-darkgrey;
+		text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 
-  .ref-content {
-    @media (max-width: $container-mobile) {
-      display: block;
+	.ref-content {
+		@media (max-width: $container-mobile) {
+			display: block;
 
-      &--heading {
-        padding: 20px 0;
-      }
-    }
-  }
-
+			&--heading {
+				padding: 20px 0;
+			}
+		}
+	}
 }
 
 #people {
-  background: #f9f9f9;
+	background: #f9f9f9;
 
-  a {
-    color: $color-darkgrey;
-    text-decoration: none;
+	a {
+		color: $color-darkgrey;
+		text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-    .people-content {
-      margin-top: 60px;
-      @include grid(2);
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.people-content {
+		margin-top: 60px;
+		@include grid(2);
 
-      @media (max-width: $container-mobile) {
-        display: block;
-      }
+		@media (max-width: $container-mobile) {
+			display: block;
+		}
+	}
 
-    }
+	.people-content--heading {
+		display: flex;
+		align-items: center;
 
-    .people-content--heading {
-      display: flex;
-      align-items: center;
+		@media (max-width: $container-ipad) {
+			display: block;
+		}
 
-      @media (max-width: $container-ipad) {
-        display: block;
-      }
+		p {
+			margin: 0;
+		}
+	}
 
-      p {
-        margin: 0;
-      }
-    }
+	.info {
+		margin: 20px 0;
 
-    .info {
-      margin: 20px 0;
+		@media (max-width: $container-mobile) {
+			margin-bottom: 40px;
+		}
+	}
 
-      @media (max-width: $container-mobile) {
-        margin-bottom: 40px;
-      }
-    }
+	.circle {
+		overflow: hidden;
+		height: 100px;
+		width: 100px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		margin: 0 25px 0 0;
 
-    .circle {
-      overflow: hidden;
-      height: 100px;
-      width: 100px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 0 25px 0 0;
-
-      img {
-          margin: 0 auto;
-          height: 100%;
-      }
-  }
+		img {
+			margin: 0 auto;
+			height: 100%;
+		}
+	}
 }
 
 #contact-info {
-  .icons a{
-    margin: 0 7px 0 0; 
-  }
+	.icons a {
+		margin: 0 7px 0 0;
+	}
 
-  .map-content {
-    @include grid(2);
+	.map-content {
+		@include grid(2);
 
-    @media (max-width: $container-mobile) {
-      display: block;
+		@media (max-width: $container-mobile) {
+			display: block;
 
-      .map-content--info {
-        margin-bottom: 60px;     
-        
-
-      }
-    }
-  }
-  
+			.map-content--info {
+				margin-bottom: 60px;
+			}
+		}
+	}
 }
-
-

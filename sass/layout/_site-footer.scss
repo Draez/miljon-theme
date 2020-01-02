@@ -11,74 +11,77 @@
 // ------------------------------------------------------------
 
 .site-footer {
-  padding: 20px;
-  background: $color-darkgrey;
-  color: #fff;
-  overflow: hidden;
-  .wrapper {
-    @include grid(4);
+	padding: 20px 0 0 0;
+	background: $color-darkgrey;
+	color: #fff;
+	overflow: hidden;
+	.wrapper {
+		@include grid(4);
 
-    @media (max-width: $container-ipad) {
-      @include grid(2);
-    
-      .col {
-        margin: 40px 0;
-      }
-    }
+		@media (max-width: $container-ipad) {
+			@include grid(2);
 
-    @media (max-width: $container-mobile) {
-      display: block;
-    }
+			.col {
+				margin: 40px 0;
+			}
+		}
 
+		@media (max-width: $container-mobile) {
+			display: block;
+		}
 
+		.col {
+			.logo {
+				opacity: 1;
+			}
+			h4 {
+				opacity: .5;
+				color: #fff;
+				margin-bottom: 0;
+			}
 
-    .col {
-      .logo {
-        opacity: 1;
+			p {
+				margin: 20px 0;
+				line-height: 32px;
+				font-size: 16px;
+			}
 
-        a {
-          &:hover:after {
-            width: 0;
-          }
-        }
-      }
-      h4 {
-        opacity: .5;
-        color: #FFF;
-        margin-bottom: 0;
-      }
+			ul {
+				padding: 0;
+				list-style: none;
+			}
+			li {
+				padding: 0;
+				line-height: 36px;
+			}
 
-      p {
-        margin: 20px 0;
-        line-height: 32px;
-        font-size: 16px;
-      }
+			a {
+				color: #fff;
+				text-decoration: none;
 
-      ul {
-        padding: 0;
-        list-style: none;
-      }
-      li {
-        padding: 0;
-        line-height: 36px;
-      }
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 
-      a {
-        color: #FFF;
-        text-decoration: none;
+	.copyright-wrapper {
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-        &:after {
-            content: ""; /* This is necessary for the pseudo element to work. */ 
-            display: block; /* This will put the pseudo element on its own line. */
-            width: 0%; /* Change this to whatever width you want to have before hover. */
-            border-bottom: 2px solid #FFF; /* This creates the border. Replace black with whatever color you want. */
-            transition: .3s; /* This establishes the amount of time in seconds the animation should take from start to finish */
-        }
+		.copyright {
+			@extend .container;
+			padding-top: 3rem;
+			margin-top: 0rem;
+			padding-bottom: 3rem;
+			margin-bottom: 0rem;
+			display: flex;
+			justify-content: space-between;
 
-        &:hover:after {
-            width: 15%; /* This will be the new width of your border when on hover */
-        }
-      }
-    }
-  }
+			p {
+				opacity: 0.6;
+				font-size: 1.4rem;
+			}
+		}
+	}
 }

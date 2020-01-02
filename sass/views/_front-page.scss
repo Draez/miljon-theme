@@ -4,203 +4,214 @@
 
 // HEADER
 .entry-header {
-    background-color: #1D242C;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    min-height: 80vh;
-    max-width: $layout-max-width;
-    margin: 0 auto;
+	background-color: #1d242c;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	min-height: 80vh;
+	max-width: $layout-max-width;
+	margin: 0 auto;
 
-    // Internet Explorer needs this
-    height: 80vh;
+	// Internet Explorer needs this
+	height: 80vh;
 
-    @media (max-width: $container-mobile) {
-        height: 100vh;
-        min-height: 100vh;
-    }
+	$duration: 800; // 2. how long is the animation? (milliseconds)
+	$delay: 80; // 3. what's the delay between each line? (milliseconds)
 
-    $duration: 800; // 2. how long is the animation? (milliseconds)
-    $delay: 80;     // 3. what's the delay between each line? (milliseconds)
+	// === <h1> wrapper ======
+	.Title {
+		max-width: 770px;
+		@include responsive-font(2.4vw, 22px, 48px);
+		color: #fff;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		z-index: 2;
+		overflow: hidden;
+		opacity: 0;
+		transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);
+		will-change: opacity, transform;
+		animation: revealText $duration+ms cubic-bezier(0.7, 0, 0.3, 1) forwards $delay+ms;
+	}
 
-    // === <h1> wrapper ======
-    .Title {
-        max-width: 770px;
-        @include responsive-font(2.4vw, 22px, 48px);
-        color: #FFF;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        z-index: 2;
-        overflow: hidden;
-        opacity: 0;
-        transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);
-        will-change: opacity, transform;
-        animation: revealText $duration+ms cubic-bezier(0.7, 0, 0.3, 1) forwards $delay+ms;
-    }
-    
-    // === Mask each line ======
-    .Title-mask {
-        display: inline-block;
-        position: relative;
-        text-align: start;
-        overflow: hidden;
-    }
-    
-    // === Animate each line within the mask ======
-    .Title-line {
-        margin-left: 12px;
-        display: inline-block;
-        opacity: 0;
-        transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);
-        will-change: opacity, transform;
-        animation: revealText $duration+ms cubic-bezier(0.7, 0, 0.3, 1) forwards;
-    }
+	// === Mask each line ======
+	.Title-mask {
+		display: inline-block;
+		position: relative;
+		text-align: start;
+		overflow: hidden;
+	}
 
-    
-    // =========
-    // Functions
-    // =========
-    // @for $i from 1 through 12 {
-    //     .Title-mask:nth-child(#{$i}) .Title-line {
-    //     animation-delay: $delay * $i + ms;
-    //     }
-    // }
-    
-    // ==========
-    // Animations
-    // ==========
-    @keyframes revealText {
-        from { opacity: 0; transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0); }
-        to   { opacity: 1; transform: translate(0%, 0%) matrix(1, 0, 0, 1, 0, 0); }
-    }
+	// === Animate each line within the mask ======
+	.Title-line {
+		margin-left: 12px;
+		display: inline-block;
+		opacity: 0;
+		transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);
+		will-change: opacity, transform;
+		animation: revealText $duration+ms cubic-bezier(0.7, 0, 0.3, 1) forwards;
+	}
+
+	// =========
+	// Functions
+	// =========
+	// @for $i from 1 through 12 {
+	//     .Title-mask:nth-child(#{$i}) .Title-line {
+	//     animation-delay: $delay * $i + ms;
+	//     }
+	// }
+
+	// ==========
+	// Animations
+	// ==========
+	@keyframes revealText {
+		from {
+			opacity: 0;
+			transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);
+		}
+		to {
+			opacity: 1;
+			transform: translate(0%, 0%) matrix(1, 0, 0, 1, 0, 0);
+		}
+	}
 }
 
 // SERVICES
 #lead {
-    text-align: center;
+	background: #f9f9f9;
+	text-align: center;
 
-    h2 {
-        font-weight: 400;
-        line-height: 46px;
-    }
+	h2 {
+		font-weight: 400;
+		line-height: 46px;
+	}
 }
 
 // WORK
 #work {
-    .wrapper {
-        @media (min-width: $container-ipad) {
-            @include grid(2);
-            grid-auto-rows: minmax(225px, auto);
-        }
+	.wrapper {
+		@media (min-width: $container-ipad) {
+			@include grid(2);
+			grid-auto-rows: minmax(225px, auto);
+			grid-column-gap: 80px;
+			grid-row-gap: 60px;
+		}
 
-        .box-content {
-            position: absolute;
-            padding: 40px;
-            bottom: 0;
-            z-index: 2;
-        }
+		.box-content {
+			padding: 0;
+			margin-top: 30px;
+			bottom: 0;
+			z-index: 2;
+		}
 
-        h2 {
-            color: #FFF;
-            margin-bottom: 0;
-        }
+		h2 {
+			color: $color-darkgrey;
+			margin-bottom: 0;
+		}
 
-        p {
-            color: #FFF;
-            margin-top: 1.3rem;
-            font-size: 20px;
-        }
-    }
+		p {
+			color: $color-darkgrey;
+			margin-top: 1.3rem;
+			font-size: 20px;
+			@media (min-width: $container-mobile) {
+				margin-top: 1rem;
+			}
+		}
+	}
 
-    .rectangle {
-        // Keep rectangle at bottom of background
-        transition: 0.3s;
-        position: absolute;	
-        bottom: 0;
-        height: 250px;	
-        width: 100%;	
-        opacity: 0.8;	
-        background: linear-gradient(180deg, rgba(29,36,44,0) 0%, #1D242C 100%);
-    }
+	// .rectangle {
+	// 	// Keep rectangle at bottom of background
+	// 	transition: 0.3s;
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	height: 250px;
+	// 	width: 100%;
+	// 	opacity: 0.8;
+	// 	background: linear-gradient(180deg, rgba(29, 36, 44, 0) 0%, #1d242c 100%);
+	// }
 
-    .bg {
-        background-position: center center;
-        background-size: cover;
-        height: 100%;
-        transition: 0.3s;
-    }
+	.bg {
+		background-position: center center;
+		background-size: cover;
+		height: 100%;
+		transition: 0.3s;
+	}
 
-    .box1,
-    .box2 {
-        // relative for rectangle positioning
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        //background-image: url('../images/ks.jpg');
+	.box {
+		// relative for rectangle positioning
+		min-height: 350px;
+		height: 350px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+		//background-image: url('../images/ks.jpg');
 
-        @media (max-width: $container-ipad) {
-            margin: 20px 0;
-        }
+		@media (max-width: $container-desktop) {
+			min-height: 250px;
+			height: 250px;
+			margin: 20px 0;
+		}
 
-        &:hover .bg {
-            transform: scale(1.1);
-        }
+		@media (max-width: $container-ipad) {
+			margin-top: 60px !important;
+			min-height: 350px;
+			height: 350px;
+		}
 
-        &:hover .rectangle {
-            height: 100%;
-            opacity: 1;
-        }
-    }
+		&:hover .bg {
+			transform: scale(1.1);
+		}
 
-    .box1 {
-        @media (min-width: $container-ipad) {
-            grid-column-start: 1;
-            grid-column-end: 3;
-            grid-row-start: 1;
-            grid-row-end: 3;
-        }
-        
-        @media (max-width: $container-ipad) {
-            height: 350px;
-         }
-    }
-    
-    .box2 {
-        height: 350px;
-        @media (min-width: $container-ipad) {
-            grid-row-start: 3; 
-            grid-row-end: 3; 
-        }
+		&:hover .rectangle {
+			height: 100%;
+			opacity: 1;
+		}
+	}
 
-    }
+	// .box1 {
+	// 	@media (min-width: $container-ipad) {
+	// 		grid-column-start: 1;
+	// 		grid-column-end: 3;
+	// 		grid-row-start: 1;
+	// 		grid-row-end: 3;
+	// 	}
+
+	// 	@media (max-width: $container-ipad) {
+	// 		height: 350px;
+	// 	}
+	// }
 }
 
 #cta {
-    padding: 120px 0;
-    background-color: rgba($color: $color-darkgrey, $alpha: 0.95);
+	padding: 120px 0;
+	background-color: rgba($color: $color-darkgrey, $alpha: 0.95);
 
-    .no-margin {
-        margin: 5px;
-        display: inline;
-        border: 2px solid rgba(#FFF, .3);
+	@media (max-width: $container-mobile) {
+		padding: 80px 0;
+	}
 
-        &:hover {
-            border: 2px solid $color-darkgrey;
-        }
- 
-        a {
-            color:#FFF;
-        }
-    }
+	a {
+		text-decoration: none;
+	}
 
-    .content {
-        text-align: center;
+	.no-margin {
+		color: #fff;
+		margin: 5px;
+		display: inline;
+		border: 2px solid rgba(#fff, .3);
 
-        h2 {
-            color: #FFF;
-        }
-    }
+		&:hover {
+			border: 2px solid $color-darkgrey;
+		}
+	}
+
+	.content {
+		text-align: center;
+
+		h2 {
+			color: #fff;
+		}
+	}
 }
