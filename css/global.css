@@ -959,7 +959,6 @@ pre {
       text-decoration: none; }
       .site-footer .wrapper .col a:hover {
         text-decoration: underline; }
-<<<<<<< HEAD
   .site-footer .copyright-wrapper {
     border-top: 1px solid rgba(255, 255, 255, 0.1); }
     .site-footer .copyright-wrapper .copyright {
@@ -979,8 +978,6 @@ pre {
         opacity: 0.6;
         font-size: 14px;
         font-size: 1.4rem; }
-=======
->>>>>>> 78461da1708f7de9cab9ce0811999bac50585e9f
 
 .content-area button,
 .content-area .button,
@@ -1496,20 +1493,20 @@ form.search-form .search-submit {
       float: left;
       margin: 0; }
       .nav-primary .menu-item.active a {
-        border-bottom: 2px solid #FFF;
+        border-bottom: 2px solid #fff;
         opacity: 1; }
       .nav-primary .menu-item a {
         -webkit-transition: width 2s, height 4s;
         transition: width 2s, height 4s;
         opacity: .8;
-        color: #333;
+        color: #fff;
         font-size: 18px;
         font-weight: 400;
         padding-bottom: 4px; }
         .nav-primary .menu-item a.disabled {
           color: #bbb; }
         .nav-primary .menu-item a:hover, .nav-primary .menu-item a:focus, .nav-primary .menu-item a:active, .nav-primary .menu-item a.highlighted, .nav-primary .menu-item a.current {
-          color: #FFF; }
+          color: #fff; }
         .nav-primary .menu-item a:after {
           padding-bottom: 4px;
           content: "";
@@ -1518,7 +1515,7 @@ form.search-form .search-submit {
           /* This will put the pseudo element on its own line. */
           width: 0%;
           /* Change this to whatever width you want to have before hover. */
-          border-bottom: 2px solid #FFF;
+          border-bottom: 2px solid #fff;
           /* This creates the border. Replace black with whatever color you want. */
           -webkit-transition: .3s;
           transition: .3s;
@@ -2280,19 +2277,19 @@ form.search-form .search-submit {
 /*
    * Minus
    */
-.hamburger--minus .hamburger-inner::before, .hamburger .hamburger-inner::before, .hamburger--minus .hamburger-inner::after, .hamburger .hamburger-inner::after {
+.hamburger--minus .hamburger-inner::before, .hamburger--minus .hamburger-inner::after {
   -webkit-transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out, opacity 0s linear;
   transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out, opacity 0s linear; }
 
-.hamburger--minus.is-active .hamburger-inner::before, .is-active.hamburger .hamburger-inner::before, .hamburger--minus.is-active .hamburger-inner::after, .is-active.hamburger .hamburger-inner::after {
+.hamburger--minus.is-active .hamburger-inner::before, .hamburger--minus.is-active .hamburger-inner::after {
   opacity: 0;
   -webkit-transition: bottom 0.08s ease-out, top 0.08s ease-out, opacity 0s 0.08s linear;
   transition: bottom 0.08s ease-out, top 0.08s ease-out, opacity 0s 0.08s linear; }
 
-.hamburger--minus.is-active .hamburger-inner::before, .is-active.hamburger .hamburger-inner::before {
+.hamburger--minus.is-active .hamburger-inner::before {
   top: 0; }
 
-.hamburger--minus.is-active .hamburger-inner::after, .is-active.hamburger .hamburger-inner::after {
+.hamburger--minus.is-active .hamburger-inner::after {
   bottom: 0; }
 
 /*
@@ -2614,33 +2611,33 @@ form.search-form .search-submit {
 /*
    * Squeeze
    */
-.hamburger--squeeze .hamburger-inner {
+.hamburger--squeeze .hamburger-inner, .hamburger .hamburger-inner {
   -webkit-transition-duration: 0.075s;
           transition-duration: 0.075s;
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-  .hamburger--squeeze .hamburger-inner::before {
+  .hamburger--squeeze .hamburger-inner::before, .hamburger .hamburger-inner::before {
     -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
     transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
-  .hamburger--squeeze .hamburger-inner::after {
+  .hamburger--squeeze .hamburger-inner::after, .hamburger .hamburger-inner::after {
     -webkit-transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
-.hamburger--squeeze.is-active .hamburger-inner {
+.hamburger--squeeze.is-active .hamburger-inner, .is-active.hamburger .hamburger-inner {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-transition-delay: 0.12s;
           transition-delay: 0.12s;
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
           transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
-  .hamburger--squeeze.is-active .hamburger-inner::before {
+  .hamburger--squeeze.is-active .hamburger-inner::before, .is-active.hamburger .hamburger-inner::before {
     top: 0;
     opacity: 0;
     -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
     transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
-  .hamburger--squeeze.is-active .hamburger-inner::after {
+  .hamburger--squeeze.is-active .hamburger-inner::after, .is-active.hamburger .hamburger-inner::after {
     bottom: 0;
     -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg);
@@ -2745,18 +2742,28 @@ form.search-form .search-submit {
   .js .nav-primary {
     position: fixed;
     z-index: 5;
+    height: 100vh;
     top: 0;
     left: 0; }
-    .js .nav-primary .menu-items {
-      padding: 15% 0;
+    .js .nav-primary .mobile-container {
       display: -webkit-box;
       display: flex;
+      height: 100vh;
+      min-height: 600px;
+      -webkit-box-pack: center;
+              justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column; }
+      .js .nav-primary .mobile-container .contact-info p {
+        font-size: 16px;
+        line-height: 32px; }
+    .js .nav-primary .menu-items {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
               flex-direction: column;
       -webkit-box-pack: center;
-              justify-content: center;
-      height: 100vh; }
+              justify-content: center; }
   .nav-primary {
     height: 100vh;
     width: 100vw;
@@ -2768,6 +2775,7 @@ form.search-form .search-submit {
     margin: 0;
     display: block;
     will-change: transform;
+    overflow-y: auto;
     -webkit-transform: translateX(100vw);
             transform: translateX(100vw);
     /* The default, as in, you get this without defining anything */
@@ -2784,11 +2792,11 @@ form.search-form .search-submit {
       .nav-primary .menu-items a {
         padding-top: 1rem;
         padding-bottom: 1rem;
-        padding-left: 5%;
+        padding-left: 2rem;
         padding-right: 5.8rem;
         color: #fff;
         font-size: 2.25rem;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 1.3;
         text-decoration: none;
         position: relative;
@@ -2803,7 +2811,8 @@ form.search-form .search-submit {
       .nav-primary .menu-items a:hover,
       .nav-primary .menu-items a:focus,
       .nav-primary .menu-items a:active {
-        color: #00b5d4; }
+        color: #fff;
+        text-decoration: underline; }
       .nav-primary .menu-items .current {
         color: #d23600; }
       .nav-primary .menu-items .disabled {
@@ -2853,6 +2862,31 @@ form.search-form .search-submit {
         margin-left: -3rem; }
       .nav-primary .menu-items ul > li ul li ul li {
         padding-left: 4.5rem; } }
+
+.nav-contact {
+  margin-bottom: 30px;
+  margin-bottom: 3rem;
+  bottom: 0;
+  padding-left: 5%;
+  color: #fff;
+  display: none; }
+  .nav-contact a {
+    color: #fff; }
+  .nav-contact a:hover,
+  .nav-contact a:focus,
+  .nav-contact a:active {
+    color: #fff;
+    text-decoration: underline; }
+  @media (max-width: 760px) {
+    .nav-contact {
+      display: block; } }
+  .nav-contact .contact-info {
+    padding: 8% 0 6%;
+    opacity: 0.6; }
+  .nav-contact .nav-icons {
+    opacity: 1; }
+    .nav-contact .nav-icons a {
+      margin: 0 7px 0 0; }
 
 .nav-toggle {
   list-style: none;
@@ -3996,7 +4030,7 @@ section {
         margin-bottom: 25px; }
         #contact-info .map-content > div:nth-child(2n+2) {
           margin-right: 0; } }
-  @media (max-width: 480px) {
+  @media (max-width: 630px) {
     #contact-info .map-content {
       display: block; }
       #contact-info .map-content .map-content--info {

@@ -37,14 +37,14 @@
             <h1 class="site-title">
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-                <?php include get_theme_file_path( '/svg/method-draw-image.svg' ); ?>
+                <?php include get_theme_file_path('/svg/method-draw-image.svg'); ?>
               </a>
             </h1>
           <?php else : ?>
             <p class="site-title">
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-                <?php include get_theme_file_path( '/svg/method-draw-image.svg' ); ?>
+                <?php include get_theme_file_path('/svg/method-draw-image.svg'); ?>
               </a>
             </p>
           <?php endif;
@@ -65,20 +65,37 @@
           </button>
 
           <nav id="nav" class="nav-primary" role="navigation">
+            <div class="mobile-container">
+              <?php wp_nav_menu(array(
+                'theme_location'    => 'primary',
+                'container'         => false,
+                'depth'             => 4,
+                'menu_class'        => 'menu-items',
+                'menu_id'           => 'main-menu',
+                'echo'              => true,
+                'fallback_cb'       => 'Air_Light_Navwalker::fallback',
+                'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
+                'walker'            => new Air_Light_Navwalker(),
+              )); ?>
 
-            <?php wp_nav_menu(array(
-              'theme_location'    => 'primary',
-              'container'         => false,
-              'depth'             => 4,
-              'menu_class'        => 'menu-items',
-              'menu_id'           => 'main-menu',
-              'echo'              => true,
-              'fallback_cb'       => 'Air_Light_Navwalker::fallback',
-              'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
-              'walker'            => new Air_Light_Navwalker(),
-            )); ?>
+              <div class="nav-contact">
+                <div class="contact-info">
+                  <p><a href="mailto:hello@miljon.fi">hello@miljon.fi</a> / <a href="tel:+358 45 268 3268">+358 45 268 3268</a><br>
+                    Bulevardi 21, 00180 Helsinki</p>
+                </div>
+                <div class="nav-icons">
+                  <a href="#" target="_blank"><?php include get_theme_file_path('/svg/linkedin.svg'); ?></a>
+                  <a href="#" target="_blank"><?php include get_theme_file_path('/svg/instagram.svg'); ?></a>
+                  <a href="#" target="_blank"><?php include get_theme_file_path('/svg/dribbble.svg'); ?></a>
+
+                </div>
+              </div>
+            </div>
 
           </nav><!-- #nav -->
+
+
+
         </div>
       </header>
     </div><!-- .nav-container -->

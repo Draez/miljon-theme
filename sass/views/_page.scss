@@ -168,7 +168,7 @@ section {
 	.map-content {
 		@include grid(2);
 
-		@media (max-width: $container-mobile) {
+		@media (max-width: $container-mobile + 150) {
 			display: block;
 
 			.map-content--info {

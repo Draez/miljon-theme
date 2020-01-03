@@ -17,15 +17,14 @@ get_header(); ?>
 
       <div class="container">
         <div class="ref-content">
-          <?php if (have_rows('work')) : ?>
-            <?php while (have_rows('work')) : the_row(); ?>
-              <div class="ref-content--heading">
-                <h2>About this project</h2>
-              </div>
-              <div class="ref-content--description">
-                <p class="lead"><?php the_field('description'); ?></p>
-                <span class="category"><?php the_field('category'); ?></span>
-              </div>
+
+          <div class="ref-content--heading">
+            <h2>About this project</h2>
+          </div>
+          <div class="ref-content--description">
+            <p class="lead"><?php the_field('description'); ?></p>
+            <span class="category"><?php the_field('category'); ?></span>
+          </div>
 
         </div>
 
@@ -41,8 +40,7 @@ get_header(); ?>
           <?php endif; ?>
         </div>
       </div>
-    <?php endwhile; ?>
-  <?php endif; ?>
+
     </section>
 
     <!-- CTA STARTS -->

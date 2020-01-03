@@ -26,7 +26,7 @@ $nav-open-from-direction: right;
 // Choose hamburger animation here
 // Choices: https://jonsuh.com/hamburgers/
 .hamburger {
-	@extend .hamburger--minus;
+	@extend .hamburger--squeeze;
 }
 
 // Mobile styles
@@ -64,18 +64,30 @@ $nav-open-from-direction: right;
 		// Hide mobile navigation by default while enabling use of animations
 		position: fixed;
 		z-index: 5;
-
+		height: 100vh;
 		// Default position, IE needs this
 		top: 0;
 		left: 0;
 
-		.menu-items {
-			padding: 15% 0;
+		.mobile-container {
 			display: flex;
+			height: 100vh;
+			min-height: 600px;
+			justify-content: center;
+			flex-direction: column;
+
+			.contact-info {
+				p {
+					font-size: 16px;
+					line-height: 32px;
+				}
+			}
+		}
+
+		.menu-items {
 			flex-direction: column;
 			justify-content: center;
 			// Let's keep the content always full height
-			height: 100vh;
 		}
 	}
 
@@ -88,6 +100,7 @@ $nav-open-from-direction: right;
 		margin: 0;
 		display: block;
 		will-change: transform;
+		overflow-y: auto;
 
 		// These need to be here instead of .js .nav-primary to prevent flickering on load
 		@if $nav-open-from-direction == top {
@@ -127,11 +140,11 @@ $nav-open-from-direction: right;
 			a {
 				padding-top: 1rem;
 				padding-bottom: 1rem;
-				padding-left: 5%;
+				padding-left: 2rem;
 				padding-right: 5.8rem; // Make room for the toggle button (sub indicator)
 				color: #fff;
 				font-size: 2.25rem;
-				font-weight: 400;
+				font-weight: 600;
 				line-height: 1.3;
 				text-decoration: none;
 				position: relative;
@@ -153,7 +166,8 @@ $nav-open-from-direction: right;
 			a:hover,
 			a:focus,
 			a:active {
-				color: $color-links;
+				color: #fff;
+				text-decoration: underline;
 			}
 
 			.current {
@@ -240,6 +254,42 @@ $nav-open-from-direction: right;
 			ul > li ul li ul li {
 				padding-left: 4.5rem;
 			}
+		}
+	}
+}
+
+.nav-contact {
+	margin-bottom: 3rem;
+	bottom: 0;
+	padding-left: 5%;
+	color: #fff;
+	display: none;
+
+	a {
+		color: #fff;
+	}
+
+	a:hover,
+	a:focus,
+	a:active {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	@media (max-width: $responsivenav) {
+		display: block;
+	}
+
+	.contact-info {
+		padding: 8% 0 6%;
+		opacity: 0.6;
+	}
+
+	.nav-icons {
+		opacity: 1;
+
+		a {
+			margin: 0 7px 0 0;
 		}
 	}
 }

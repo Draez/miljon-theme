@@ -13,7 +13,7 @@
  */
 ?>
 
-<?php $args = array('post_type' => 'footer',);
+<?php $args = array('post_type' => 'footer');
 $query = new WP_Query($args); ?>
 
 </div><!-- #content -->
@@ -97,43 +97,42 @@ $query = new WP_Query($args); ?>
 <script>
 	mapboxgl.accessToken = "pk.eyJ1IjoibWlsam9uIiwiYSI6ImNrNDdhY3l6bDBxYnUzZmp0OGM2N280d2cifQ.CEfTwFZzFzWPL30xATCg2w";
 
-	/* Map: This represents the map on the page. */
 	var map = new mapboxgl.Map({
-		container: "map",
-		style: "mapbox://styles/mapbox/dark-v10",
-		zoom: 13,
-		center: [24.9342, 60.1642]
+		container: 'map',
+		style: 'mapbox://styles/mapbox/light-v10',
+		center: [24.934494, 60.163964], // starting position [lng, lat]
+		zoom: 14
 	});
 
-	map.on("load", function() {
-		/* Image: An image is loaded and added to the map. */
-		map.loadImage("https://i.imgur.com/MK4NUzI.png", function(error, image) {
-			if (error) throw error;
-			map.addImage("custom-marker", image);
-			/* Style layer: A style layer ties together the source and image and specifies how they are displayed on the map. */
-			map.addLayer({
-				id: "markers",
-				type: "symbol",
-				/* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
-				source: {
-					type: "geojson",
-					data: {
-						type: 'FeatureCollection',
-						features: [{
-							type: 'Feature',
-							properties: {},
-							geometry: {
-								type: "Point",
-								coordinates: [24.934494, 60.163964]
-							}
-						}]
+	map.on('load', function() {
+		map.loadImage(
+			'/wp-content/themes/miljon/images/loc.png',
+			function(error, image) {
+				if (error) throw error;
+				map.addImage('pointer', image);
+				map.addLayer({
+					'id': 'points',
+					'type': 'symbol',
+					'source': {
+						'type': 'geojson',
+						'data': {
+							'type': 'FeatureCollection',
+							'features': [{
+								'type': 'Feature',
+								'geometry': {
+									'type': 'Point',
+									'coordinates': [24.934494, 60.163964]
+								}
+							}]
+						}
+					},
+					'layout': {
+						'icon-image': 'pointer',
+						'icon-size': 0.25
 					}
-				},
-				layout: {
-					"icon-image": "custom-marker",
-				}
-			});
-		});
+				});
+			}
+		);
 	});
 </script>
 
