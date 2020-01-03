@@ -6,6 +6,39 @@
 // ------------------------------------------------------------
 
 // Buttons
+#lead,
+#cta {
+	a {
+		color: $color-darkgrey;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: #fff;
+		}
+	}
+}
+
+#cta a {
+	color: #fff;
+}
+
+.button-ghost {
+	transition: 0.3s;
+	padding: 1.2rem 3rem;
+	margin-top: 1rem;
+	display: inline-block;
+	background-color: transparent;
+	text-decoration: none;
+	border-radius: 30px;
+	//border: 2px solid #1D242C;
+	border: 2px solid rgba(#1d242c, .3);
+
+	&:hover {
+		background-color: $color-darkgrey;
+	}
+}
+
 .content-area,
 .site-footer {
 	button,

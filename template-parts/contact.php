@@ -61,8 +61,8 @@ get_header(); ?>
 
                         <div class="icons">
                             <a href="#" target="_blank"><?php include get_theme_file_path('/svg/linkedin.svg'); ?></a>
-                            <a href="#" target="_blank"><?php include get_theme_file_path('/svg/instagram.svg'); ?></a>
-                            <a href="#" target="_blank"><?php include get_theme_file_path('/svg/dribbble.svg'); ?></a>
+                            <a href="https://www.instagram.com/miljonfi/" target="_blank"><?php include get_theme_file_path('/svg/instagram.svg'); ?></a>
+                            <a href="https://dribbble.com/miljon" target="_blank"><?php include get_theme_file_path('/svg/dribbble.svg'); ?></a>
                         </div>
                     </div>
                     <div id='map' style='width: 100%; height: 400px;'></div>

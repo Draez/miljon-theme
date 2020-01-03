@@ -54,8 +54,25 @@ section {
 }
 
 .service {
-	padding: 0 0 80px 0;
-	display: flex;
+	padding: 0 0 120px 0;
+	@include grid(2);
+	grid-template-columns: 58.3% 41.6%;
+
+	img {
+		max-width: 100%;
+	}
+
+	@media (max-width: $container-ipad) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media (max-width: $container-ipad - 150) {
+		display: flex;
+	}
+
+	&:nth-child(even) {
+		grid-template-columns: 41.6% 58.3%;
+	}
 
 	p,
 	li {
@@ -63,19 +80,33 @@ section {
 	}
 
 	.service--content:nth-child(even) {
-		margin: 0 60px;
+		margin: 0 110px;
+
+		@media (max-width: 1200px) {
+			margin: 0 0 0 60px;
+		}
+
+		@media (max-width: $container-ipad - 150) {
+			margin: 20px 60px 0 0px;
+		}
 	}
+
 	.service--content:nth-child(odd) {
-		margin: 0 60px 0 0;
+		margin: 0 110px 0 0;
+
+		@media (max-width: 1200px) {
+			margin: 0 60px 0 0px;
+		}
+		@media (max-width: $container-ipad - 150) {
+			margin: 20px 60px 0 0px;
+		}
 	}
 
 	@media (max-width: $container-ipad) {
 		&:nth-child(even) {
 			flex-direction: column;
 		}
-		.service--content:nth-child(even) {
-			margin: 0 60px 0 0;
-		}
+
 		&:nth-child(odd) {
 			flex-direction: column-reverse;
 		}
@@ -115,7 +146,7 @@ section {
 		}
 	}
 	.people-content {
-		margin-top: 60px;
+		margin-top: 50px;
 		@include grid(2);
 
 		@media (max-width: $container-mobile) {
