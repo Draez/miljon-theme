@@ -3838,7 +3838,8 @@ form.search-form .search-submit {
   #cta .content {
     text-align: center; }
     #cta .content h2 {
-      color: #fff; }
+      color: #fff;
+      line-height: 1.5; }
 
 section {
   padding: 60px 0; }
