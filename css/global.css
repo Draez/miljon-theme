@@ -3979,6 +3979,9 @@ section {
   .service p,
   .service li {
     color: #555555; }
+  .service li {
+    list-style-type: circle;
+    line-height: 2; }
   .service .service--content:nth-child(even) {
     margin: 0 110px; }
     @media (max-width: 1200px) {

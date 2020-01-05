@@ -87,6 +87,11 @@ section {
 		color: #555555;
 	}
 
+	li {
+		list-style-type: circle;
+		line-height: 2;
+	}
+
 	.service--content:nth-child(even) {
 		margin: 0 110px;
 
