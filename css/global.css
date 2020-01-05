@@ -3646,6 +3646,11 @@ form.search-form .search-submit {
   max-width: 100%;
   margin: 0 auto;
   height: 80vh; }
+  @media (max-width: 480px) {
+    .entry-header, .block.block-work,
+    .block.block-hero {
+      min-height: 460px;
+      height: 60vh; } }
   .entry-header .Title, .block.block-work .Title, .block.block-hero .Title {
     max-width: 770px;
     color: #fff;
@@ -3661,6 +3666,9 @@ form.search-form .search-submit {
     will-change: opacity, transform;
     -webkit-animation: revealText 800ms cubic-bezier(0.7, 0, 0.3, 1) forwards 80ms;
             animation: revealText 800ms cubic-bezier(0.7, 0, 0.3, 1) forwards 80ms; }
+    @media (max-width: 480px) {
+      .entry-header .Title, .block.block-work .Title, .block.block-hero .Title {
+        margin-top: 60px; } }
   .entry-header .Title-mask, .block.block-work .Title-mask, .block.block-hero .Title-mask {
     display: inline-block;
     position: relative;

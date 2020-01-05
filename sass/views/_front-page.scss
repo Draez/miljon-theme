@@ -13,6 +13,11 @@
 	max-width: $layout-max-width;
 	margin: 0 auto;
 
+	@media (max-width: $container-mobile) {
+		min-height: 460px;
+		height: 60vh;
+	}
+
 	// Internet Explorer needs this
 	height: 80vh;
 
@@ -34,6 +39,10 @@
 		transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);
 		will-change: opacity, transform;
 		animation: revealText $duration+ms cubic-bezier(0.7, 0, 0.3, 1) forwards $delay+ms;
+
+		@media (max-width: $container-mobile) {
+			margin-top: 60px;
+		}
 	}
 
 	// === Mask each line ======
