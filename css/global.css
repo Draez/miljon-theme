@@ -3701,7 +3701,7 @@ form.search-form .search-submit {
   text-align: center; }
   #lead h2 {
     font-weight: 400;
-    line-height: 46px; }
+    line-height: 1.5; }
 
 @media (min-width: 770px) {
   #work .wrapper {
