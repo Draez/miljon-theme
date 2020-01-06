@@ -843,7 +843,7 @@ pre {
 .site-footer {
   padding: 0;
   background: #1d242c;
-  color: #fff;
+  color: #000;
   overflow: hidden; }
   @media (min-width: 770px) {
     .site-footer .container, .site-footer .copyright-wrapper .copyright {
