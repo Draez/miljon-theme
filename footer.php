@@ -136,6 +136,10 @@ $query = new WP_Query($args); ?>
 	});
 </script>
 
+<!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6951666.js"></script>
+<!-- End of HubSpot Embed Code -->
+
 <?php wp_footer(); ?>
 
 </body>
