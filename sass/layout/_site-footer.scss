@@ -15,6 +15,13 @@
 	background: $color-darkgrey;
 	color: #fff;
 	overflow: hidden;
+
+	@media (min-width: $container-ipad) {
+		.container {
+			padding-top: 6rem;
+		}
+	}
+
 	.wrapper {
 		@include grid(4);
 

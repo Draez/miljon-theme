@@ -845,6 +845,9 @@ pre {
   background: #1d242c;
   color: #fff;
   overflow: hidden; }
+  @media (min-width: 770px) {
+    .site-footer .container, .site-footer .copyright-wrapper .copyright {
+      padding-top: 6rem; } }
   .site-footer .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
