@@ -106,7 +106,7 @@ $query = new WP_Query($args); ?>
 
 	map.on('load', function() {
 		map.loadImage(
-			'/wp-content/themes/miljon/images/loc.png',
+			'/wp-content/themes/miljon-theme/images/loc.png',
 			function(error, image) {
 				if (error) throw error;
 				map.addImage('pointer', image);
