@@ -21,19 +21,20 @@ get_header(); ?>
   <main role="main" id="main" class="site-main">
 
     <!-- HEADER STARTS -->
-    <?php include('template-parts/frontpage/front-header.php'); ?>
+    <?php get_template_part('template-parts/frontpage/front-header', 'header'); ?>
+
     <!-- HEADER ENDS -->
 
     <!-- SERVICES START -->
-    <?php include('template-parts/frontpage/lead.php'); ?>
+    <?php get_template_part('template-parts/frontpage/lead', 'lead'); ?>
     <!-- SERVICES END -->
 
     <!-- WORK STARTS -->
-    <?php include('template-parts/frontpage/works.php'); ?>
+    <?php get_template_part('template-parts/frontpage/works', 'works-frontpage'); ?>
     <!-- WORK ENDS -->
 
     <!-- CTA STARTS -->
-    <?php include('template-parts/cta/cta.php'); ?>
+    <?php get_template_part('template-parts/cta/cta', 'cta'); ?>
     <!-- CTA ENDS -->
 
   </main><!-- #main -->

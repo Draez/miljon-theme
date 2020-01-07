@@ -10,7 +10,7 @@ get_header(); ?>
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
     <!-- HEADER STARTS -->
-    <?php include('hero.php'); ?>
+    <?php get_template_part('template-parts/hero', get_post_type()); ?>
     <!-- HEADER ENDS -->
 
     <section id="works">
@@ -44,7 +44,7 @@ get_header(); ?>
     </section>
 
     <!-- CTA STARTS -->
-    <?php include('cta/cta.php'); ?>
+    <?php get_template_part('template-parts/cta/cta', 'cta'); ?>
     <!-- CTA ENDS -->
 
   </main><!-- #main -->

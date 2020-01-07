@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -18,7 +19,7 @@ the_post();
 
 get_header();
 
-get_template_part( 'template-parts/hero', get_post_type() ); ?>
+get_template_part('template-parts/hero', get_post_type()); ?>
 
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
@@ -27,25 +28,25 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <header class="entry-header">
-          <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+          <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
         </header><!-- .entry-header -->
 
         <div class="entry-content">
           <?php the_content();
 
-          wp_link_pages( array(
-            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'miljon' ),
+          wp_link_pages(array(
+            'before' => '<div class="page-links">' . esc_html__('Pages:', 'miljon'),
             'after'  => '</div>',
-          ) ); ?>
+          )); ?>
         </div><!-- .entry-content -->
 
-        <?php if ( get_edit_post_link() ) : ?>
+        <?php if (get_edit_post_link()) : ?>
           <footer class="entry-footer">
             <?php edit_post_link(
               sprintf(
                 /* translators: %s: Name of current post. Only visible to screen readers */
                 wp_kses(
-                  __( 'Edit <span class="screen-reader-text">%s</span>', 'miljon' ),
+                  __('Edit <span class="screen-reader-text">%s</span>', 'miljon'),
                   array(
                     'span' => array(
                       'class' => array(),
@@ -61,11 +62,6 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
         <?php endif; ?>
 
       </article><!-- #post-## -->
-
-      <?php // If comments are open or we have at least one comment, load up the comment template.
-      if ( comments_open() || get_comments_number() ) {
-        comments_template();
-      } ?>
 
     </div><!-- .container -->
   </main><!-- #main -->
