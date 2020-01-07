@@ -60,7 +60,7 @@ get_header(); ?>
                         <?php the_field('contact'); ?>
 
                         <div class="icons">
-                            <a href="#" target="_blank"><?php include get_theme_file_path('/svg/linkedin.svg'); ?></a>
+                            <a href="https://www.linkedin.com/company/miljon/about/" target="_blank"><?php include get_theme_file_path('/svg/linkedin.svg'); ?></a>
                             <a href="https://www.instagram.com/miljonfi/" target="_blank"><?php include get_theme_file_path('/svg/instagram.svg'); ?></a>
                             <a href="https://dribbble.com/miljon" target="_blank"><?php include get_theme_file_path('/svg/dribbble.svg'); ?></a>
                         </div>
