@@ -23,7 +23,7 @@ get_header(); ?>
     <!-- HEADER STARTS -->
     <?php include('template-parts/frontpage/front-header.php'); ?>
     <!-- HEADER ENDS -->
-    
+
     <!-- SERVICES START -->
     <?php include('template-parts/frontpage/lead.php'); ?>
     <!-- SERVICES END -->
