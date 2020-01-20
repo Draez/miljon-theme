@@ -79,7 +79,7 @@ $query = new WP_Query($args); ?>
 	<div class="copyright-wrapper">
 		<div class="copyright">
 			<div class="col">
-				<p>@ <?php echo date('Y'); ?> Miljon Solutions Oy</p>
+				<p>&copy; <?php echo date('Y'); ?> Miljon Solutions Oy</p>
 			</div>
 			<div class="col">
 				<p>Crafted by Miljon</p>
@@ -94,50 +94,52 @@ $query = new WP_Query($args); ?>
 
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
-<script>
-	mapboxgl.accessToken = "pk.eyJ1IjoibWlsam9uIiwiYSI6ImNrNDdhY3l6bDBxYnUzZmp0OGM2N280d2cifQ.CEfTwFZzFzWPL30xATCg2w";
+<?php if (is_page_template('template-parts/contact.php')) : ?>
+	<script>
+		mapboxgl.accessToken = "pk.eyJ1IjoibWlsam9uIiwiYSI6ImNrNDdhY3l6bDBxYnUzZmp0OGM2N280d2cifQ.CEfTwFZzFzWPL30xATCg2w";
 
-	var map = new mapboxgl.Map({
-		container: 'map',
-		style: 'mapbox://styles/mapbox/light-v10',
-		center: [24.934494, 60.163964], // starting position [lng, lat]
-		zoom: 14
-	});
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/light-v10',
+			center: [24.934494, 60.163964], // starting position [lng, lat]
+			zoom: 14
+		});
 
-	map.on('load', function() {
-		map.loadImage(
-			'/wp-content/themes/miljon-theme/images/loc.png',
-			function(error, image) {
-				if (error) throw error;
-				map.addImage('pointer', image);
-				map.addLayer({
-					'id': 'points',
-					'type': 'symbol',
-					'source': {
-						'type': 'geojson',
-						'data': {
-							'type': 'FeatureCollection',
-							'features': [{
-								'type': 'Feature',
-								'geometry': {
-									'type': 'Point',
-									'coordinates': [24.934494, 60.163964]
-								}
-							}]
+		map.on('load', function() {
+			map.loadImage(
+				'/wp-content/themes/miljon-theme/images/loc.png',
+				function(error, image) {
+					if (error) throw error;
+					map.addImage('pointer', image);
+					map.addLayer({
+						'id': 'points',
+						'type': 'symbol',
+						'source': {
+							'type': 'geojson',
+							'data': {
+								'type': 'FeatureCollection',
+								'features': [{
+									'type': 'Feature',
+									'geometry': {
+										'type': 'Point',
+										'coordinates': [24.934494, 60.163964]
+									}
+								}]
+							}
+						},
+						'layout': {
+							'icon-image': 'pointer',
+							'icon-size': 0.25
 						}
-					},
-					'layout': {
-						'icon-image': 'pointer',
-						'icon-size': 0.25
-					}
-				});
-			}
-		);
-	});
-</script>
+					});
+				}
+			);
+		});
+	</script>
+<?php endif; ?>
 
 <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6951666.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6951666.js"></script>
 <!-- End of HubSpot Embed Code -->
 
 <?php wp_footer(); ?>
