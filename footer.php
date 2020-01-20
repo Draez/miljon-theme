@@ -93,8 +93,9 @@ $query = new WP_Query($args); ?>
 
 
 
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+
 <?php if (is_page_template('template-parts/contact.php')) : ?>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
 	<script>
 		mapboxgl.accessToken = "pk.eyJ1IjoibWlsam9uIiwiYSI6ImNrNDdhY3l6bDBxYnUzZmp0OGM2N280d2cifQ.CEfTwFZzFzWPL30xATCg2w";
 
