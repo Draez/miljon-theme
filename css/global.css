@@ -496,7 +496,7 @@ a {
   font-size: 14px; }
   @media screen and (min-width: 320px) {
     .cat a, .comments-link, .comment-list li, .comment-list li p, .comment-list li .comment-time {
-      font-size: calc( 14px + 3 * ((100vw - 320px) / 1600)); } }
+      font-size: calc( 14px + 3 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     .cat a, .comments-link, .comment-list li, .comment-list li p, .comment-list li .comment-time {
       font-size: 17px; } }
@@ -563,7 +563,7 @@ input[type="search"] {
     input[type="week"],
     input[type="email"],
     input[type="search"] {
-      font-size: calc( 17px + 1 * ((100vw - 320px) / 1600)); } }
+      font-size: calc( 17px + 1 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     p,
     dd,
@@ -600,7 +600,7 @@ input[type="search"] {
   font-size: 19px; }
   @media screen and (min-width: 320px) {
     .lead {
-      font-size: calc( 19px + 1 * ((100vw - 320px) / 1600)); } }
+      font-size: calc( 19px + 1 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     .lead {
       font-size: 20px; } }
@@ -629,7 +629,7 @@ h1 {
   font-size: 32px; }
   @media screen and (min-width: 320px) {
     h1 {
-      font-size: calc( 32px + 19 * ((100vw - 320px) / 1600)); } }
+      font-size: calc( 32px + 19 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     h1 {
       font-size: 51px; } }
@@ -638,7 +638,7 @@ h2 {
   font-size: 24px; }
   @media screen and (min-width: 320px) {
     h2 {
-      font-size: calc( 24px + 8 * ((100vw - 320px) / 1600)); } }
+      font-size: calc( 24px + 8 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     h2 {
       font-size: 32px; } }
@@ -647,7 +647,7 @@ h3 {
   font-size: 21px; }
   @media screen and (min-width: 320px) {
     h3 {
-      font-size: calc( 21px + 3 * ((100vw - 320px) / 1600)); } }
+      font-size: calc( 21px + 3 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     h3 {
       font-size: 24px; } }
@@ -658,7 +658,7 @@ h4,
   @media screen and (min-width: 320px) {
     h4,
     .comment-list li .comment-author {
-      font-size: calc( 18px + 3 * ((100vw - 320px) / 1600)); } }
+      font-size: calc( 18px + 3 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     h4,
     .comment-list li .comment-author {
@@ -668,7 +668,7 @@ h5 {
   font-size: 14px; }
   @media screen and (min-width: 320px) {
     h5 {
-      font-size: calc( 14px + 3 * ((100vw - 320px) / 1600)); } }
+      font-size: calc( 14px + 3 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     h5 {
       font-size: 17px; } }
@@ -677,7 +677,7 @@ h6 {
   font-size: 14px; }
   @media screen and (min-width: 320px) {
     h6 {
-      font-size: calc( 14px + -2 * ((100vw - 320px) / 1600)); } }
+      font-size: calc( 14px + -2 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     h6 {
       font-size: 12px; } }
@@ -3715,6 +3715,10 @@ form.search-form .search-submit {
   #lead h2 {
     font-weight: 400;
     line-height: 1.5; }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #work .wrapper {
+    flex-wrap: wrap; } }
 
 @media (min-width: 770px) {
   #work .wrapper {
